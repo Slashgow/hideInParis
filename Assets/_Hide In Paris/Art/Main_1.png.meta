@@ -1495,10 +1495,10 @@ TextureImporter:
       name: circle_iso
       rect:
         serializedVersion: 2
-        x: 391
-        y: 1002
-        width: 198
-        height: 202
+        x: 390
+        y: 1004
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1711,6 +1711,116 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Main_1_0
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1034
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bfa9e0a14f777d459fe711440933995
+      internalID: -693249728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_1_1
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1034
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a4eda74c5be3654b8019bb4db9bdb54
+      internalID: 861061753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_1_2
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 999
+        width: 45
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779ad77392b4f2a439d0006e29bf117b
+      internalID: 1210122631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_1_3
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1027
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 761380e6c996b43458b21df8d161cea0
+      internalID: -723729925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle_outline
+      rect:
+        serializedVersion: 2
+        x: 1829
+        y: 36
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17370c8c0025de94da8dbc4b2126e3ed
+      internalID: -1768234826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1723,7 +1833,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":2,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       2_circles: 7984832364667628035
       Illustration_sans_titre(16)_102: 2232476905609919757
@@ -1812,6 +1924,9 @@ TextureImporter:
       Illustration_sans_titre(16)_98: 7262919711112849993
       Illustration_sans_titre(16)_99: 1060160318305469566
       Main_1_0: -693249728
+      Main_1_1: 861061753
+      Main_1_2: 1210122631
+      Main_1_3: -723729925
       air_conditionning: -3523141841311349817
       balcon_1: 640557734712990927
       balcon_2: -4905202019893067207
@@ -1833,6 +1948,7 @@ TextureImporter:
       cheminee_2: 6488149707497458560
       circle: -2885101779759707675
       circle_iso: -920773364541950164
+      circle_outline: -1768234826
       column_1: -2859113259464755827
       column_2: -8083413141717742673
       crack_1: 3684532890883720242

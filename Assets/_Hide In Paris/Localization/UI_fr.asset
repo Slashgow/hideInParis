@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_fr
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 085cff1cf741a9f43a05e5e3734ddcaa, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 27810721792
+    m_Localized: "Ils sembleraient qu'ils ont pris le contr\xF4le dans la ville de
+      l'amour"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1780966879232
+    m_Localized: Miaouuuu, Miaouuu ? ... Miaouuuuu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12847969333248
+    m_Localized: "On dirait que quelqu'un s'est amus\xE9 \xE0 mettre ces livres dans
+      des endroits incongrus."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17498424864768
+    m_Localized: El bandito veut des cheveux lui aussi!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67415679823872
+    m_Localized: "Roger n'a rien pour nourrir ses amis pr\xE9f\xE9r\xE9s!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72787018772480
+    m_Localized: "Natalie est all\xE9 voir le dernier El bandito avant d'aller en
+      terasse"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75465325146112
+    m_Localized: On dirait que Nicolas attend quelqu'un
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75820029046784
+    m_Localized: On dirait que Capucine attend quelqu'un
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78566513831936
+    m_Localized: Faudrait pas que quelqu'un tombe, sinon on va encore dire que c'est
+      de ma faute !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81330073628672
+    m_Localized: "Ah... satan\xE9e pigeons, Comment va faire Bernard pour appeler
+      son client maintenant ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83408326094848
+    m_Localized: "Damien regrette tellement de n'\xEAtre pas remont\xE9 aller chercher
+      de quoi se revigorer avant de partir courir"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

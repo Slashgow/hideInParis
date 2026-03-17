@@ -14,4 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HiddenObjectGroup
   groupId: Pigeons
   displayName: Pigeons
-  requiredCount: 4
+  description:
+    m_TableReference:
+      m_TableCollectionName: GUID:085cff1cf741a9f43a05e5e3734ddcaa
+    m_TableEntryReference:
+      m_KeyId: 27810721792
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  sprite: {fileID: 5375959384661242613, guid: cbb26f0fcd6722e419e1f5f6a75f5306, type: 3}
+  references:
+    version: 2
+    RefIds: []

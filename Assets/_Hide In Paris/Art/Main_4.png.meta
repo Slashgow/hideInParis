@@ -1149,6 +1149,358 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ui_border
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1475
+        width: 388
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9916aea74fa487945b1bdd10cc875c4c
+      internalID: 2005243364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old_4
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 1390
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f35c8e5d6586046991db15f70f40d6
+      internalID: -1523029121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old_3
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1390
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58744b6c653906643acfe46379ac2014
+      internalID: 1715071999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strange_1
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 1359
+        width: 71
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c042dd0f19f591749b0b436f07a63cb8
+      internalID: -1337033184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old_1
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 1357
+        width: 99
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea3be97597ca31469164413ad08a885
+      internalID: -728134815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiter_2
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 1261
+        width: 64
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83727de3cdcae8d4e8b16c4ad32791f4
+      internalID: -174561713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiter_1
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 1261
+        width: 64
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd07968d46cb8554cbdfd0ef9144f6c4
+      internalID: 630976914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guy_2
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 1255
+        width: 84
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08cc512ae0af18547abdd1e05028b976
+      internalID: -478109224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: child_1
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 1258
+        width: 77
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7c859afbfdf31e4caa27a1723aab796
+      internalID: 475008867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloud_1
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 915
+        width: 420
+        height: 292
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0bc1a3967f96b419e8bd0bde4b367f
+      internalID: 1066924974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strange_2
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 1111
+        width: 71
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a561b88c175614681c275b5280c5f8
+      internalID: -194144960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guy_1
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 1120
+        width: 84
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc49eb29b643aa648b1492d2ca58a3a4
+      internalID: 559347222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: child_2
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1120
+        width: 77
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 695f7ad7e24a21e448fe51be97ac4a85
+      internalID: -223556707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old_2
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 1101
+        width: 99
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f82970198478c4393a8e06ab4a59dc
+      internalID: 191995723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloud_3
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 468
+        width: 217
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4291a742bd8e27145b405892d5bbb1e0
+      internalID: -969004253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloud_2
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 78
+        width: 491
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b76b83a75075f24aa2fbf80bd0d9f3c
+      internalID: 1741333134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1161,18 +1513,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":2,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Main_4_10: -9120846579358683032
       Main_4_100: -1895681590552767206
       Main_4_101: 9056486895654906688
-      Main_4_11: -3646740085839351887
-      Main_4_12: -3618481406049505644
-      Main_4_14: 5194675488508583902
       Main_4_16: -5545975528700156520
       Main_4_18: -5132152488339349732
       Main_4_19: -8993201453206934876
-      Main_4_2: -1110220029121132933
       Main_4_20: 1650538219119188298
       Main_4_21: -3808835821991202848
       Main_4_22: 8003650574004996623
@@ -1181,7 +1530,6 @@ TextureImporter:
       Main_4_25: 2452462989298526466
       Main_4_26: -8221318029320520631
       Main_4_27: -8903749056398739665
-      Main_4_3: 5998486199557307748
       Main_4_31: 4094301176837063440
       Main_4_32: 1568615186300277302
       Main_4_34: 7776106760034028652
@@ -1189,7 +1537,6 @@ TextureImporter:
       Main_4_36: 5125253589482863348
       Main_4_37: -398998556519187506
       Main_4_39: -6589271608328051880
-      Main_4_4: -2067621670998302813
       Main_4_40: -1180139200548572108
       Main_4_41: -2846201738073179030
       Main_4_42: -2963151720022970672
@@ -1199,7 +1546,6 @@ TextureImporter:
       Main_4_46: -2867218027296810257
       Main_4_48: 7297581032771229821
       Main_4_49: -3392014591535653705
-      Main_4_5: -9152444969171164672
       Main_4_50: -5453025806988931424
       Main_4_52: 7009753667533361502
       Main_4_53: 2523536522805210432
@@ -1209,7 +1555,6 @@ TextureImporter:
       Main_4_57: -5144131037645627291
       Main_4_58: 7827029983342064712
       Main_4_59: 3594972138467188626
-      Main_4_6: -1025528782659554817
       Main_4_60: 5888047250953452070
       Main_4_62: 4050027880746860159
       Main_4_63: -5596955310857096259
@@ -1227,7 +1572,6 @@ TextureImporter:
       Main_4_77: -9096279101211449412
       Main_4_78: -4605113244644743873
       Main_4_79: -2233203212934646116
-      Main_4_8: -6212964281758649835
       Main_4_80: 8495182130350669084
       Main_4_81: -4991252684964627949
       Main_4_82: -7901624701484207878
@@ -1237,7 +1581,6 @@ TextureImporter:
       Main_4_87: -803208752
       Main_4_88: -2954448676264716416
       Main_4_89: -8807156539022523950
-      Main_4_9: 406602345492279008
       Main_4_90: 2216379074646639967
       Main_4_91: 7336465543949797608
       Main_4_96: 4482637439416052593
@@ -1249,6 +1592,11 @@ TextureImporter:
       bush_3: -9051906182728546461
       bush_4: -7415797913952616986
       bush_5: 1750740463839486082
+      child_1: 475008867
+      child_2: -3646740085839351887
+      cloud_1: -6212964281758649835
+      cloud_2: 5194675488508583902
+      cloud_3: -969004253
       dirt_1: -4827552874686199384
       dirt_2: -953363443829963803
       dirt_3: 8824715333489499295
@@ -1265,17 +1613,28 @@ TextureImporter:
       ground_6: 6943603621933245200
       ground_7: -2109449395883689988
       ground_8: -2724048121670385019
+      guy_1: -9120846579358683032
+      guy_2: -1025528782659554817
       hole_1: -5646351554996043985
       hole_2: -2518986718974144964
       hole_3: 2124601765158739196
       hole_4: -4915115329346038223
+      old_1: 5998486199557307748
+      old_2: -3618481406049505644
+      old_3: 1715071999
+      old_4: -1523029121
       sol: -3671691250624070539
+      strange_1: -1110220029121132933
+      strange_2: 406602345492279008
       tree_1: 4812003430721742956
       tree_2: -5655675866345829759
       tree_3: -2045042812210166183
       tree_4: -2370733145012907111
       tree_5: -8745866942243105255
       trotoir: 2647517159263051339
+      ui_border: 2005243364
+      waiter_1: -9152444969171164672
+      waiter_2: -2067621670998302813
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

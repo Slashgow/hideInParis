@@ -1448,6 +1448,182 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: cat_outline
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 1914
+        width: 114
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3941b98d10ac3184da9f85ab07a07037
+      internalID: 395735111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perruque_outline
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 1658
+        width: 106
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc710e78cc892343872a86dff1b4553
+      internalID: -874353696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: egout_outline
+      rect:
+        serializedVersion: 2
+        x: 1637
+        y: 804
+        width: 112
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5149c2b0b9173d94ab1df98c909fc09e
+      internalID: 506276561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baguette_outline
+      rect:
+        serializedVersion: 2
+        x: 1821
+        y: 783
+        width: 81
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 798f5b9bf96915045b140aa13d70ab66
+      internalID: -1881311986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone_outline
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 737
+        width: 42
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1bf3a1027919994eaeffcd9cc3a9c74
+      internalID: -681051506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottle_outline
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 662
+        width: 27
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c428774190fdb8408099f88e7883fe3
+      internalID: -1872378268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sunglass_outline
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 606
+        width: 54
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe12bf6bc8844b4fa0a04c7e2b45543
+      internalID: 840419710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: book_outline
+      rect:
+        serializedVersion: 2
+        x: 1859
+        y: 67
+        width: 34
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b2211a14e169246b3fac62c748189a
+      internalID: 820885200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1460,37 +1636,141 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":2,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
+      Main_3_0: -1596564262
+      Main_3_1: 1696542794
+      Main_3_10: 786936679
+      Main_3_100: 285556405
+      Main_3_101: -71129910
+      Main_3_102: 706746768
+      Main_3_103: 932388781
+      Main_3_104: -1835739671
+      Main_3_105: -1849042446
+      Main_3_106: -1683784179
+      Main_3_107: -513318089
+      Main_3_108: -392338040
+      Main_3_109: -22219015
       Main_3_11: -8010771480744733590
+      Main_3_110: 1791546544
+      Main_3_111: 1225340990
+      Main_3_113: 665490212
+      Main_3_114: -1510317811
+      Main_3_115: 1726330420
+      Main_3_116: -1052107189
+      Main_3_117: -1112980284
+      Main_3_118: 337489693
+      Main_3_12: 2130748028
+      Main_3_13: 1531351883
+      Main_3_15: -1586223666
+      Main_3_16: 276815178
+      Main_3_17: 295875465
+      Main_3_18: -1697107217
+      Main_3_19: 195977836
+      Main_3_2: 2051520799
+      Main_3_20: 2126572754
+      Main_3_21: -366113220
+      Main_3_22: 1885066581
+      Main_3_23: -1948843008
+      Main_3_24: -1705177937
+      Main_3_25: -846570923
+      Main_3_26: 1152009188
       Main_3_27: -955513943891954847
+      Main_3_28: -297068927
       Main_3_29: 6866920073360230705
+      Main_3_3: -680337466
+      Main_3_30: -280638019
+      Main_3_31: 1864670991
       Main_3_32: 2387028265485628079
       Main_3_33: -6959235297655669154
+      Main_3_34: -305057307
+      Main_3_35: -295729899
+      Main_3_36: 1445395288
+      Main_3_37: -818693621
+      Main_3_38: -907543659
+      Main_3_39: 1789172483
+      Main_3_4: 1897974475
+      Main_3_40: -767261462
+      Main_3_41: -2111841830
+      Main_3_42: -481439889
+      Main_3_43: -1783802758
       Main_3_44: -5375459641810804585
+      Main_3_45: 1262026180
+      Main_3_46: 395346378
+      Main_3_48: -1008860428
+      Main_3_49: -1374044765
       Main_3_5: -2344397030257467227
+      Main_3_50: 906716737
+      Main_3_51: 1609483904
+      Main_3_52: -1976200840
       Main_3_53: 5885695408508029373
+      Main_3_54: 1304267390
+      Main_3_55: -786134223
       Main_3_56: 4220516089397264519
       Main_3_57: -968107321668691654
       Main_3_58: 3900314269093063155
+      Main_3_6: 1967904925
+      Main_3_60: 402699343
+      Main_3_61: -828883651
+      Main_3_62: 431418327
+      Main_3_63: 1407596359
+      Main_3_64: -1463497498
+      Main_3_65: 1836452128
+      Main_3_66: -1033634127
+      Main_3_67: -1644407881
+      Main_3_68: 722133798
+      Main_3_69: -39618663
+      Main_3_7: -1570772358
+      Main_3_70: 1959619350
+      Main_3_71: 1816795257
+      Main_3_72: 185686284
+      Main_3_73: 115847274
+      Main_3_74: 891983858
+      Main_3_75: -467557659
+      Main_3_76: 781565482
+      Main_3_77: 357744339
+      Main_3_78: 1979470884
+      Main_3_79: -1598378218
       Main_3_8: 8215204783260199096
+      Main_3_80: 1768603811
+      Main_3_81: 2054957207
+      Main_3_83: -1181451511
+      Main_3_84: -1458009600
+      Main_3_85: -1952481271
+      Main_3_86: -518268597
+      Main_3_87: 2002180857
+      Main_3_88: 1639205336
       Main_3_9: 608114856393239641
+      Main_3_90: 1319517408
+      Main_3_91: 1717786391
+      Main_3_92: 646790718
+      Main_3_93: 264782018
+      Main_3_94: -340671321
+      Main_3_95: 1517878168
+      Main_3_97: -1111611684
+      Main_3_98: 641618991
       actor_1: -416803109016578909
       actor_2: 7789230764833169077
       baguette: -4947605339959000970
+      baguette_outline: -1881311986
       bakeries: -3630306678335585178
       ball: 5842114036211747555
       barrier: 3198828582709792977
       barrier_2: 1390196341695535233
       book: 3264222918207935905
       book drawing: -4322925787780719510
+      book_outline: 820885200
       book_shelve_empty: -8212692387209679864
       book_shelve_full: 2590010974111995142
       bottle: -6094619736681214895
+      bottle_outline: -1872378268
       carte: 8917481372475823386
       cat_1: 7459298496595550097
       cat_2: -2092108468865089476
       cat_3: -5677461283682640679
+      cat_outline: 395735111
       cellphone: 7158772604198888796
       chair: 414418180272868358
       child_1: -5439128804997954818
@@ -1499,6 +1779,7 @@ TextureImporter:
       coffee: -519725534849557997
       cone: 5997460924727602878
       couvercle_egout: 5819523775116762984
+      egout_outline: 506276561
       eye: 8750581994988212786
       france_drawing: -7541283751069980434
       glass: -910224529131501260
@@ -1515,7 +1796,10 @@ TextureImporter:
       old_man_1: -2653044880747441378
       old_man_2: -5683870255206042994
       perruque: 5117248568411219995
+      perruque_outline: -874353696
+      phone_outline: -681051506
       sad: -3393549715191441443
+      sunglass_outline: 840419710
       sunglasses: -6886593306868627743
       table_terasse: 4924111291086337712
       terasse_roof: 3556615997302985298

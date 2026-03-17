@@ -1,15 +1,7 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-/// <summary>
-/// Attach to a pigeon (or any creature). On click:
-///  1. Triggers a fly animation on the Animator
-///  2. Picks a random 2D direction (isometric-aware — no straight down)
-///  3. Moves the object in that direction for a defined duration
-///  4. Deactivates the GameObject when time is up
-///
-/// Requires: Animator with a trigger parameter matching flyTriggerName.
-/// </summary>
-public class ClickableFlyer : MonoBehaviour
+public class ClickableFlyer : MonoBehaviour, IPointerDownHandler
 {
     [Header("Animation")]
     [Tooltip("Name of the Animator trigger parameter that starts the fly animation.")]
@@ -35,7 +27,6 @@ public class ClickableFlyer : MonoBehaviour
     [Tooltip("If true, flips the sprite on X so the pigeon faces the direction it flies.")]
     public bool faceDirection = true;
 
-    // ── Runtime ────────────────────────────────────────────────────────────────
 
     private Animator    _animator;
     private SpriteRenderer _spriteRenderer;
@@ -43,20 +34,19 @@ public class ClickableFlyer : MonoBehaviour
     private Vector2     _direction;
     private float       _timer = 0f;
 
-    // ── Unity ──────────────────────────────────────────────────────────────────
-
     private void Awake()
     {
         _animator       = GetComponent<Animator>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         if (_animator == null)
             Debug.LogWarning($"[ClickableFlyer] '{name}' has no Animator.", this);
     }
-
-    private void OnMouseDown()
+    public void OnPointerDown(PointerEventData eventData)
     {
-        if (_flying) return;
+        if (_flying) 
+            return;
+
         TriggerFly();
     }
 
@@ -79,6 +69,7 @@ public class ClickableFlyer : MonoBehaviour
     {
         _flying    = true;
         _timer     = lifetime;
+        _spriteRenderer.sortingOrder = 200;
         _direction = PickDirection();
 
         // Trigger the animation
@@ -97,16 +88,14 @@ public class ClickableFlyer : MonoBehaviour
         return new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)).normalized;
     }
 
-    // ── Public API ─────────────────────────────────────────────────────────────
-
-    /// <summary>Trigger the fly programmatically (e.g. from another script).</summary>
     public void Fly() 
     {
-        if (_flying) return;
+        if (_flying) 
+            return;
+
         TriggerFly();
     }
 
-    /// <summary>Reset the pigeon to its idle state (call after re-activating the GameObject).</summary>
     public void ResetFlyer()
     {
         _flying = false;
@@ -119,7 +108,6 @@ public class ClickableFlyer : MonoBehaviour
             _animator.ResetTrigger(flyTriggerName);
     }
 
-    // ── Gizmo ──────────────────────────────────────────────────────────────────
 
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
@@ -155,5 +143,7 @@ public class ClickableFlyer : MonoBehaviour
         float rad = degrees * Mathf.Deg2Rad;
         return new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0f);
     }
+
+   
 #endif
 }

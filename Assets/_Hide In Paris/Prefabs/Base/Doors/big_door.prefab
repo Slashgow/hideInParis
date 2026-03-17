@@ -183,7 +183,7 @@ MonoBehaviour:
   - {fileID: -776204939, guid: 713d8b4f916765748b22e51cb1510b14, type: 3}
   - {fileID: -1739176043, guid: 713d8b4f916765748b22e51cb1510b14, type: 3}
   showFirstFrameOnAwake: 1
-  endBehaviour: 1
+  endBehaviour: 0
   onIndexChanged:
     m_PersistentCalls:
       m_Calls: []

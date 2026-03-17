@@ -64,6 +64,10 @@ public class SpriteSequencer : MonoBehaviour
         int next = _currentIndex + 1;
         bool reachedEnd = next >= sprites.Length;
 
+        bool isEnd = next >= sprites.Length -1;
+        if (isEnd)
+            FireCompleted();
+
         if (reachedEnd)
         {
             switch (endBehaviour)
@@ -72,13 +76,13 @@ public class SpriteSequencer : MonoBehaviour
                     next = sprites.Length - 1;
                     ApplySprite(next);
                     Lock();
-                    FireCompleted();
+                    //FireCompleted();
                     break;
 
                 case EndBehaviour.Loop:
                     next = 0;
                     ApplySprite(next);
-                    FireCompleted();  
+                    //FireCompleted();  
                     break;
             }
         }

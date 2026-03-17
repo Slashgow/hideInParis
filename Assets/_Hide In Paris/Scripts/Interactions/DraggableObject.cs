@@ -1,14 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
-/// <summary>
-/// Allows dragging this GameObject's sprite along a single axis (X or Y),
-/// clamped between a min and max value in either local or world space.
-///
-/// Standalone — no dependency on the hidden object system.
-/// Works for shop blinds, windows, drawers, levers, sliders, etc.
-/// </summary>
-public class DraggableObject : MonoBehaviour
+public class DraggableObject : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     public enum Axis { X, Y }
     public enum PositionSpace { World, Local }
@@ -51,7 +45,6 @@ public class DraggableObject : MonoBehaviour
     [Tooltip("Fired when the object reaches or snaps to max (normalised 1).")]
     [SerializeField] private UnityEvent onReachedMax;
 
-    // ?? Runtime ????????????????????????????????????????????????????????????????
 
     private bool _isDragging = false;
     private float _dragOffset = 0f;
@@ -60,26 +53,35 @@ public class DraggableObject : MonoBehaviour
     private bool _wasAtMin = false;
     private bool _wasAtMax = false;
 
-    /// <summary>Current position on the axis, normalised between 0 (min) and 1 (max).</summary>
     public float NormalisedValue => Mathf.InverseLerp(min, max, GetAxisValue());
-
-    // ?? Unity ??????????????????????????????????????????????????????????????????
 
     private void Awake()
     {
         _cam = Camera.main;
         ClampPosition();
     }
-
-    private void OnMouseDown()
+    public void OnPointerDown(PointerEventData eventData)
     {
         _isDragging = true;
         _dragOffset = GetAxisValue() - PointerToAxisValue();
     }
 
-    private void OnMouseDrag()
+    public void OnPointerUp(PointerEventData eventData)
     {
-        if (!_isDragging) return;
+        if (!_isDragging) 
+            return;
+
+        _isDragging = false;
+
+        TrySnap();
+        onReleased?.Invoke(NormalisedValue);
+        CheckEdgeEvents();
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (!_isDragging) 
+            return;
 
         float target = PointerToAxisValue() + _dragOffset;
         float clamped = Mathf.Clamp(target, min, max);
@@ -89,19 +91,7 @@ public class DraggableObject : MonoBehaviour
         CheckEdgeEvents();
     }
 
-    private void OnMouseUp()
-    {
-        if (!_isDragging) return;
-        _isDragging = false;
-
-        TrySnap();
-        onReleased?.Invoke(NormalisedValue);
-        CheckEdgeEvents();
-    }
-
-    // ?? Space-aware position helpers ???????????????????????????????????????????
-
-    /// <summary>Get the current axis value in the configured space.</summary>
+   
     private float GetAxisValue()
     {
         if (space == PositionSpace.World)
@@ -270,5 +260,7 @@ public class DraggableObject : MonoBehaviour
                 Gizmos.DrawWireSphere(Vector3.Lerp(minPos, maxPos, t), 0.04f);
         }
     }
+
+
 #endif
 }
