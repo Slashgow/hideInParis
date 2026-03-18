@@ -68,6 +68,18 @@ MonoBehaviour:
       de quoi se revigorer avant de partir courir"
     m_Metadata:
       m_Items: []
+  - m_Id: 323251887009792
+    m_Localized: Volume Principal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 323293049909248
+    m_Localized: Volume de la musique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 323295415496704
+    m_Localized: Volume des effets sonores
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

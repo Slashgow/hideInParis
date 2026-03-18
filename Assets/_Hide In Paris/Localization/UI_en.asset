@@ -65,6 +65,18 @@ MonoBehaviour:
       before going for a run
     m_Metadata:
       m_Items: []
+  - m_Id: 323251887009792
+    m_Localized: Main Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 323293049909248
+    m_Localized: Music Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 323295415496704
+    m_Localized: Sound effects Volume
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

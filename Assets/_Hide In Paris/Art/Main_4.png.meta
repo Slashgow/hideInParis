@@ -1501,6 +1501,72 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: icon_settings
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 859
+        width: 196
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c4436c1b0036048a57ccbe8e994afe
+      internalID: -1857601161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_slider
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 828
+        width: 325
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f34aabf30684d44854b724f8fd8e2b
+      internalID: -1116832791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_handle
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 777
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa72343e095d3544f9f75e27f9c7f32c
+      internalID: 323372814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1619,6 +1685,7 @@ TextureImporter:
       hole_2: -2518986718974144964
       hole_3: 2124601765158739196
       hole_4: -4915115329346038223
+      icon_settings: -1857601161
       old_1: 5998486199557307748
       old_2: -3618481406049505644
       old_3: 1715071999
@@ -1633,6 +1700,8 @@ TextureImporter:
       tree_5: -8745866942243105255
       trotoir: 2647517159263051339
       ui_border: 2005243364
+      ui_handle: 323372814
+      ui_slider: -1116832791
       waiter_1: -9152444969171164672
       waiter_2: -2067621670998302813
   mipmapLimitGroupName: 
