@@ -1624,6 +1624,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: bas_lampadaire_open
+      rect:
+        serializedVersion: 2
+        x: 1401
+        y: 463
+        width: 57
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 065c8d2e05969ce4bb19c9afb042a984
+      internalID: -786925244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1640,7 +1662,6 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":2,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Main_3_0: -1596564262
       Main_3_1: 1696542794
       Main_3_10: 786936679
       Main_3_100: 285556405
@@ -1759,6 +1780,7 @@ TextureImporter:
       ball: 5842114036211747555
       barrier: 3198828582709792977
       barrier_2: 1390196341695535233
+      bas_lampadaire_open: -1596564262
       book: 3264222918207935905
       book drawing: -4322925787780719510
       book_outline: 820885200

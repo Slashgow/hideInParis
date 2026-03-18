@@ -610,6 +610,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lampadaire (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8382586491320334220, guid: 46c18b5e52eba934289fbfc8d2ed0d58, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1439,6 +1443,10 @@ PrefabInstance:
     - target: {fileID: 6937721857135217412, guid: 46c18b5e52eba934289fbfc8d2ed0d58, type: 3}
       propertyPath: m_Name
       value: lampadaire (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382586491320334220, guid: 46c18b5e52eba934289fbfc8d2ed0d58, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9779,6 +9787,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lampadaire (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8382586491320334220, guid: 46c18b5e52eba934289fbfc8d2ed0d58, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12478,6 +12490,101 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2277307408538186945, guid: 69c8836cb86da634284afdf93547fc0a, type: 3}
   m_PrefabInstance: {fileID: 940145761}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &949048333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 949048334}
+  - component: {fileID: 949048336}
+  - component: {fileID: 949048335}
+  - component: {fileID: 949048337}
+  m_Layer: 0
+  m_Name: Particle Click Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &949048334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949048333}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &949048335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949048333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647a3ec70847216498b2ff3a580a9168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::inkolorgames.PoolingSystem
+  prefab: {fileID: 4622990112005128971, guid: 5153e0299293efc43a5a123e8a7b80cd, type: 3}
+  growPoolSize: 10
+--- !u!114 &949048336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949048333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5483a81512ad44fb59576c574c54cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoolInstantiatedEffect
+  doEffectOnEnable: 0
+  poolSystems:
+  - {fileID: 949048335}
+  numberOfEffectToSpawn: 1
+  instantiateFirstOnExactPosition: 1
+  spawnMinOffset: {x: 0, y: 0, z: 0}
+  spawnMaxOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &949048337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949048333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9fb85c16c6f9c41b6210ecbe6bf305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClickManager
+  clickAction: {fileID: -85607785942557223, guid: 36a53b2e84799364fbb83b6ebfc8ceac, type: 3}
+  OnClickWorldPosition:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 949048336}
+        m_TargetAssemblyTypeName: PoolInstantiatedEffect, Assembly-CSharp
+        m_MethodName: DoEffect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &953545572
 GameObject:
   m_ObjectHideFlags: 0
@@ -13817,6 +13924,10 @@ PrefabInstance:
     - target: {fileID: 6937721857135217412, guid: 46c18b5e52eba934289fbfc8d2ed0d58, type: 3}
       propertyPath: m_Name
       value: lampadaire (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382586491320334220, guid: 46c18b5e52eba934289fbfc8d2ed0d58, type: 3}
+      propertyPath: m_SortingOrder
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17797,6 +17908,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lampadaire (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8382586491320334220, guid: 46c18b5e52eba934289fbfc8d2ed0d58, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19501,6 +19616,10 @@ PrefabInstance:
     - target: {fileID: 6937721857135217412, guid: 46c18b5e52eba934289fbfc8d2ed0d58, type: 3}
       propertyPath: m_Name
       value: lampadaire (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382586491320334220, guid: 46c18b5e52eba934289fbfc8d2ed0d58, type: 3}
+      propertyPath: m_SortingOrder
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28692,6 +28811,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1367499123503100285, guid: 85420a42dd986bd439bce403d152490f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1851301054604826541, guid: 85420a42dd986bd439bce403d152490f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -29161,6 +29284,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 33
       objectReference: {fileID: 0}
+    - target: {fileID: 2329709194116247382, guid: 4a649f9051037c7469d378f29a2f999e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2929243641875357300, guid: 4a649f9051037c7469d378f29a2f999e, type: 3}
       propertyPath: m_SortingOrder
       value: 11
@@ -29176,6 +29303,10 @@ PrefabInstance:
     - target: {fileID: 3665830649893321505, guid: 4a649f9051037c7469d378f29a2f999e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 7.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026606657103120241, guid: 4a649f9051037c7469d378f29a2f999e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4147934216996992633, guid: 4a649f9051037c7469d378f29a2f999e, type: 3}
       propertyPath: m_SortingOrder
@@ -29613,6 +29744,7 @@ SceneRoots:
   - {fileID: 1607797151}
   - {fileID: 8510412409507420326}
   - {fileID: 528601353}
+  - {fileID: 949048334}
   - {fileID: 1949310451}
   - {fileID: 190302195}
   - {fileID: 473073463}

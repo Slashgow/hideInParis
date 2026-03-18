@@ -752,7 +752,23 @@ PrefabInstance:
     - target: {fileID: 7101888160399637241, guid: b88c4b2a5ee346f4d907d00a98a29cb8, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7984832364667628035, guid: cbb26f0fcd6722e419e1f5f6a75f5306, type: 3}
+      objectReference: {fileID: 463992551168879423, guid: afae9878e9c5e3943812aee91df9d67d, type: 3}
+    - target: {fileID: 7101888160399637241, guid: b88c4b2a5ee346f4d907d00a98a29cb8, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7101888160399637241, guid: b88c4b2a5ee346f4d907d00a98a29cb8, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7101888160399637241, guid: b88c4b2a5ee346f4d907d00a98a29cb8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7101888160399637241, guid: b88c4b2a5ee346f4d907d00a98a29cb8, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
