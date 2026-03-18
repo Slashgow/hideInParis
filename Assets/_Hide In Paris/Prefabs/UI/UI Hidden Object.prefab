@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 6657722361511090891}
   - component: {fileID: 2758795072783104423}
   - component: {fileID: 8832508778896547627}
+  - component: {fileID: 8173569001471630319}
   m_Layer: 5
   m_Name: Background text
   m_TagString: Untagged
@@ -151,6 +152,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 2.5
+--- !u!114 &8173569001471630319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4550129053186771789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c401ecd1efc14c4496afa8215023878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::inkolorgames.effects.RotateObject
+  doEffectOnEnable: 1
+  rotationDuration: 0.25
+  easing: 4
+  rotationAxis: {x: 0, y: 0, z: 1}
+  startAngle: -20
+  endAngle: 0
+  rotateMode: 0
 --- !u!1 &4615207384782864908
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,6 +396,8 @@ GameObject:
   - component: {fileID: 5995072001173719634}
   - component: {fileID: 8012893814742151625}
   - component: {fileID: 2045623524357467529}
+  - component: {fileID: 1749911830125202607}
+  - component: {fileID: 1856844686208332288}
   m_Layer: 5
   m_Name: UI Hidden Object
   m_TagString: Untagged
@@ -503,3 +525,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1749911830125202607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8026061401199087492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba22471fa0db20c48858637990b0f160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::inkolorgames.effects.SelectableInputRegister
+--- !u!114 &1856844686208332288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8026061401199087492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c3350d0fef0b245bcb31e8525ba637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::inkolorgames.effects.ScaleOnHover
+  endScale: 1.1
+  duration: 0.25
+  easing: 7
+  useSelectableInteractability: 0

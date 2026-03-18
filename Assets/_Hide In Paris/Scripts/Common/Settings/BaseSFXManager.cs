@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace inkolorgames
 {
     public abstract class BaseSFXManager : MonoSingleton<BaseSFXManager>

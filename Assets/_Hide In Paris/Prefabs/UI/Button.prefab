@@ -12,6 +12,11 @@ GameObject:
   - component: {fileID: 1706983959877493033}
   - component: {fileID: 7101888160399637241}
   - component: {fileID: 2446561961495137902}
+  - component: {fileID: 7964017141338167104}
+  - component: {fileID: 653433328757719344}
+  - component: {fileID: 7666684287308620126}
+  - component: {fileID: 5813479453994948013}
+  - component: {fileID: 1132802505531735950}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -120,3 +125,111 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7964017141338167104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855070109556291346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba22471fa0db20c48858637990b0f160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::inkolorgames.effects.SelectableInputRegister
+--- !u!114 &653433328757719344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855070109556291346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c3350d0fef0b245bcb31e8525ba637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::inkolorgames.effects.ScaleOnHover
+  endScale: 1.1
+  duration: 0.2
+  easing: 7
+  useSelectableInteractability: 0
+--- !u!114 &7666684287308620126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855070109556291346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c401ecd1efc14c4496afa8215023878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::inkolorgames.effects.RotateObject
+  doEffectOnEnable: 0
+  rotationDuration: 0.2
+  easing: 7
+  rotationAxis: {x: 0, y: 0, z: 1}
+  startAngle: -20
+  endAngle: 0
+  rotateMode: 0
+--- !u!114 &5813479453994948013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855070109556291346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588144d0537026f41adc6ea50a6fd07c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverEvent
+  onPointerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7666684287308620126}
+        m_TargetAssemblyTypeName: inkolorgames.effects.RotateObject, Assembly-CSharp
+        m_MethodName: DoEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPointerExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1132802505531735950}
+        m_TargetAssemblyTypeName: inkolorgames.effects.RotateObject, Assembly-CSharp
+        m_MethodName: DoEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1132802505531735950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855070109556291346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c401ecd1efc14c4496afa8215023878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::inkolorgames.effects.RotateObject
+  doEffectOnEnable: 0
+  rotationDuration: 0.2
+  easing: 7
+  rotationAxis: {x: 0, y: 0, z: 1}
+  startAngle: 0
+  endAngle: -20
+  rotateMode: 0
