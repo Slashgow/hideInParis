@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using inkolorgames;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -37,7 +38,7 @@ public class CameraMover : MonoBehaviour
     public bool IsMovingWithWASD { get; set; }
     public bool IsMovementLocked { get; set; }
 
-    private void Awake()
+    protected void Awake()
     {
         inputHandler = GetComponent<CameraInputHandler>();
         originPosition = transform.position;
@@ -52,8 +53,23 @@ public class CameraMover : MonoBehaviour
             UnlockMovement();
     }
 
-    protected virtual void OnEnable() => inputHandler.OnRecenterCamera += InputHandler_OnRecenterCamera;
-    protected virtual void OnDisable() => inputHandler.OnRecenterCamera -= InputHandler_OnRecenterCamera;
+    protected virtual void OnEnable()
+    {
+        inputHandler.OnRecenterCamera += InputHandler_OnRecenterCamera;
+        //HiddenObjectManager.OnStartHighlightingItem += LockMovement;
+        //HiddenObjectManager.OnEndHighlightingItem += UnlockMovement;
+        FlyToUIAnimation.OnStartFly += LockMovement;
+        FlyToUIAnimation.OnEndFly += UnlockMovement;
+    }
+
+    protected virtual void OnDisable()
+    {
+        inputHandler.OnRecenterCamera -= InputHandler_OnRecenterCamera;
+        //HiddenObjectManager.OnStartHighlightingItem -= LockMovement;
+        //HiddenObjectManager.OnEndHighlightingItem -= UnlockMovement;
+        FlyToUIAnimation.OnStartFly -= LockMovement;
+        FlyToUIAnimation.OnEndFly -= UnlockMovement;
+    }
 
     private void Start()
     { 

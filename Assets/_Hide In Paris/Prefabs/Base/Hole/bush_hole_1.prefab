@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5621022421612362310}
   - component: {fileID: 3611642318201547477}
   - component: {fileID: 9099046852572175060}
+  - component: {fileID: 4550470403282880043}
   m_Layer: 0
   m_Name: bush_hole_1
   m_TagString: Untagged
@@ -222,3 +223,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SetSortOrder
   spriteRendererParent: {fileID: 0}
   spriteRenderer: {fileID: 6001150148583995061}
+--- !u!114 &4550470403282880043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272202855646425999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd40d3e9b0663d42943ed270683caa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Surface
+  surfaceType: 1

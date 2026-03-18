@@ -131,8 +131,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HiddenObjectItem
   groupId: Cat
+  spriteRenderer: {fileID: 2468428416202370686}
   requiresPlacement: 0
   targetDropZone: {fileID: 0}
+  sprite: {fileID: 0}
+  requiredCountBeforePlacement: 1
 --- !u!61 &4455640682933436267
 BoxCollider2D:
   m_ObjectHideFlags: 0

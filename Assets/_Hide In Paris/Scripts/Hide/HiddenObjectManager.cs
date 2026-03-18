@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using inkolorgames;
 using UnityEngine;
@@ -6,6 +7,10 @@ using UnityEngine.Events;
 
 public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
 {
+    [Header("Highlight")]
+    [SerializeField] private Transform highlightBackground;
+    [SerializeField, Range(0f, 5f)] private float highlightDuration = 2f;
+
     [Header("Groups")]
     [SerializeField] private List<HiddenObjectGroup> groups = new List<HiddenObjectGroup>();
     public List<HiddenObjectGroup> HiddenObjects => groups;
@@ -25,9 +30,16 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
     public static event Action<string, int> OnAnyItemFound;
     public static event Action<string> OnAnyGroupCompleted;
     public static event Action<string> OnAnyItemPlaced;
+    public static event Action OnStartHighlightingItem;
+    public static event Action OnEndHighlightingItem;
+
+    [SerializeField] private UnityEvent<Vector3> OnAnyItemFoundWithPosition;
+    [SerializeField] private UnityEvent<Vector3> OnAnyItemPlacedWithPosition;
+
 
     protected override void Awake()
     {
+        highlightBackground.gameObject.SetActive(false);
         BuildStates();
     }
 
@@ -63,23 +75,8 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
         }
     }
 
-    // -------------------------------------------------------
-    // UI Registration
-    // -------------------------------------------------------
-
-    public void RegisterUI(string groupId, UIHiddenItem ui)
-    {
-        _uiByGroup[groupId] = ui;
-    }
-
-    public UIHiddenItem GetUI(string groupId)
-    {
-        return _uiByGroup.TryGetValue(groupId, out var ui) ? ui : null;
-    }
-
-    // -------------------------------------------------------
-    // Reporting
-    // -------------------------------------------------------
+    public void RegisterUI(string groupId, UIHiddenItem ui) => _uiByGroup[groupId] = ui;
+    public UIHiddenItem GetUI(string groupId) => _uiByGroup.TryGetValue(groupId, out var ui) ? ui : null;
 
     public void ReportItemFound(HiddenObjectItem item)
     {
@@ -89,25 +86,53 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
             return;
         }
 
-        if (state.IsCompleted) return;
+        if (state.IsCompleted) 
+            return;
 
         state.FoundCount++;
 
         // Trigger fly toward UI icon
         if (_uiByGroup.TryGetValue(item.groupId, out var ui))
         {
-            item.FlyToUI(ui.GetWorldPosition());
+            //item.FlyToUI(ui.GetWorldPosition());
 
             if (item.requiresPlacement)
                 ui.RegisterPlacementItem(item);
         }
 
+        if(item.HightlightOnFound)
+            Highlight(item);
+
         onAnyItemFoundUnity?.Invoke(item.groupId);
         OnAnyItemFound?.Invoke(item.groupId, state.FoundCount);
+        OnAnyItemFoundWithPosition?.Invoke(item.transform.position);
 
         // Non-placement groups complete on collection
         if (!item.requiresPlacement)
             CheckGroupCompletion(item.groupId, state);
+    }
+
+    private void Highlight(HiddenObjectItem item)
+    {
+        OnStartHighlightingItem?.Invoke();
+        highlightBackground.transform.position = item.transform.position;
+        highlightBackground.gameObject.SetActive(true);
+        item.Highlight();
+
+        StartCoroutine(StopHighlight(item));
+    }
+
+    private IEnumerator StopHighlight(HiddenObjectItem item)
+    {
+        yield return new WaitForSeconds(highlightDuration);
+        item.UnHighlight();
+        highlightBackground.gameObject.SetActive(false);
+        OnEndHighlightingItem?.Invoke();
+
+        if (_uiByGroup.TryGetValue(item.groupId, out var ui))
+        {
+            item.FlyToUI(ui.GetWorldPosition());
+        }
     }
 
     public void ReportItemPlaced(HiddenObjectItem item)
@@ -115,27 +140,15 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
         if (!_states.TryGetValue(item.groupId, out var state)) return;
 
         OnAnyItemPlaced?.Invoke(item.groupId);
+        OnAnyItemPlacedWithPosition?.Invoke(item.transform.position);
         CheckGroupCompletion(item.groupId, state);
     }
 
-    // -------------------------------------------------------
-    // Queries
-    // -------------------------------------------------------
-
-    public int GetFoundCount(string groupId)
-    {
-        return _states.TryGetValue(groupId, out var state) ? state.FoundCount : 0;
-    }
-
-    public HiddenObjectGroupRuntimeState GetState(string groupId) =>
-        _states.TryGetValue(groupId, out var s) ? s : null;
-
-    public float OverallProgress() =>
-        _states.Count == 0 ? 1f : (float)_completedGroupCount / _states.Count;
-
+    public int GetFoundCount(string groupId) => _states.TryGetValue(groupId, out var state) ? state.FoundCount : 0;
+    public HiddenObjectGroupRuntimeState GetState(string groupId) => _states.TryGetValue(groupId, out var s) ? s : null;
+    public float OverallProgress() => _states.Count == 0 ? 1f : (float)_completedGroupCount / _states.Count;
     public int CompletedGroupCount() => _completedGroupCount;
     public int TotalGroupCount() => _states.Count;
-
     public IEnumerable<HiddenObjectGroupRuntimeState> GetAllStates() => _states.Values;
 
     private void CheckGroupCompletion(string groupId, HiddenObjectGroupRuntimeState state)

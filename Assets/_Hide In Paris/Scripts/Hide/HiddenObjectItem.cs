@@ -6,6 +6,12 @@ public class HiddenObjectItem : MonoBehaviour, IPointerDownHandler
     [Header("Group")]
     public string groupId;
 
+    [Header("Visuals")]
+    [SerializeField] private bool highlightOnFound = true;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
+    public bool HightlightOnFound => highlightOnFound;
+
     [Header("Placement")]
     public bool requiresPlacement = false;
     public HiddenObjectDropZone targetDropZone;
@@ -25,6 +31,7 @@ public class HiddenObjectItem : MonoBehaviour, IPointerDownHandler
 
     private FlyToUIAnimation _flyAnimation;
     private Collider2D _col;
+    private int originalSortOrder;
 
     // Stored so we can fly back to UI if placement fails
     private Vector3 _uiWorldPosition;
@@ -34,6 +41,7 @@ public class HiddenObjectItem : MonoBehaviour, IPointerDownHandler
         _originalPosition = transform.position;
         _flyAnimation = GetComponent<FlyToUIAnimation>();
         _col = GetComponent<Collider2D>();
+        originalSortOrder = spriteRenderer.sortingOrder;
 
         if (_flyAnimation != null)
             _flyAnimation.OnComplete += OnFlyComplete;
@@ -45,10 +53,9 @@ public class HiddenObjectItem : MonoBehaviour, IPointerDownHandler
             _flyAnimation.OnComplete -= OnFlyComplete;
     }
 
-    private void OnFlyComplete()
-    {
-        gameObject.SetActive(false);
-    }
+    public void Highlight() => spriteRenderer.sortingOrder = 400;
+    public void UnHighlight() => spriteRenderer.sortingOrder = originalSortOrder;
+    private void OnFlyComplete() => gameObject.SetActive(false);
 
 
     public void OnPointerDown(PointerEventData eventData)
@@ -71,7 +78,10 @@ public class HiddenObjectItem : MonoBehaviour, IPointerDownHandler
     public void FlyToUI(Vector3 worldTarget)
     {
         _uiWorldPosition = worldTarget;
-        if (_col != null) _col.enabled = false;
+
+        if (_col != null) 
+            _col.enabled = false;
+
         _flyAnimation?.Fly(worldTarget);
     }
 

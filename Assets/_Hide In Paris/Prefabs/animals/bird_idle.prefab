@@ -135,6 +135,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HiddenObjectItem
   groupId: Pigeons
+  spriteRenderer: {fileID: 1106911556764077689}
+  requiresPlacement: 0
+  targetDropZone: {fileID: 0}
+  sprite: {fileID: 0}
+  requiredCountBeforePlacement: 1
 --- !u!1 &8104559888864652926
 GameObject:
   m_ObjectHideFlags: 0

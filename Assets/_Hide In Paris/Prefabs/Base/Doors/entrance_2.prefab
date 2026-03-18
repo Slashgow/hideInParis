@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 923490515128799301}
   - component: {fileID: 5371888713635438196}
   - component: {fileID: 6799666156541805601}
+  - component: {fileID: 2458756209946449954}
   m_Layer: 0
   m_Name: entrance_close_3
   m_TagString: Untagged
@@ -284,6 +285,19 @@ PolygonCollider2D:
       - {x: 0.85499996, y: -2.0393004}
       - {x: 0.85499996, y: -0.45930052}
   m_UseDelaunayMesh: 1
+--- !u!114 &2458756209946449954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290504700711920182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd40d3e9b0663d42943ed270683caa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Surface
+  surfaceType: 4
 --- !u!1 &8577397232395416061
 GameObject:
   m_ObjectHideFlags: 0

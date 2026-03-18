@@ -14,12 +14,16 @@ public class FlyToUIAnimation : MonoBehaviour
     private Vector3 _target;
     private float _timer;
 
+    public static event Action OnStartFly;
+    public static event Action OnEndFly;
+
     public void Fly(Vector3 worldTarget)
     {
         _startPos = transform.position;
         _target = worldTarget;
         _timer = 0f;
         _flying = true;
+        OnStartFly?.Invoke();
     }
 
     private void Update()
@@ -35,6 +39,7 @@ public class FlyToUIAnimation : MonoBehaviour
 
         if (t >= 1f)
         {
+            OnEndFly?.Invoke();
             _flying = false;
             transform.localScale = Vector3.one;
             OnComplete?.Invoke();

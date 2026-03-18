@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 202176845064678962}
   - component: {fileID: 5605114490299292386}
   - component: {fileID: 8622023519382746701}
+  - component: {fileID: 6112742018026299487}
   m_Layer: 0
   m_Name: door_2
   m_TagString: Untagged
@@ -176,3 +177,16 @@ PolygonCollider2D:
       - {x: 0.29, y: -0.42499998}
       - {x: 0.29, y: 1.295}
   m_UseDelaunayMesh: 1
+--- !u!114 &6112742018026299487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27964693991184399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd40d3e9b0663d42943ed270683caa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Surface
+  surfaceType: 2
