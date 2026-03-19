@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization.Settings;
 
 public class UIHiddenItem : MonoBehaviour, IPointerDownHandler
 {
@@ -31,7 +32,8 @@ public class UIHiddenItem : MonoBehaviour, IPointerDownHandler
         iconHiddenItem.sprite = state.Data.Outline == null ? state.Data.Sprite : state.Data.Outline;
         radialFillBar.fillAmount = 0f;
         radialFillBar.color = colorDefault;
-        descriptionText.text = state.Data.Description.GetLocalizedString();
+
+        SetDescription(state); 
         textParent.SetActive(false);
 
         // Register with manager so it can call GetWorldPosition / RegisterPlacementItem
@@ -40,6 +42,21 @@ public class UIHiddenItem : MonoBehaviour, IPointerDownHandler
         HiddenObjectManager.OnAnyItemFound += OnAnyItemFound;
         HiddenObjectManager.OnAnyGroupCompleted += OnAnyGroupCompleted;
         HiddenObjectManager.OnAnyItemPlaced += OnAnyItemPlaced;
+        LocalizationSettings.SelectedLocaleChanged += LocalizationSettings_SelectedLocaleChanged;
+    }
+
+    private void LocalizationSettings_SelectedLocaleChanged(UnityEngine.Localization.Locale obj) => SetDescription(_runtimeState);
+
+    private void SetDescription(HiddenObjectGroupRuntimeState state)
+    {
+#if UNITY_WEBGL
+        state.Data.Description.GetLocalizedStringAsync().Completed += handle =>
+        {
+            descriptionText.text = handle.Result;
+        };
+#else
+        descriptionText.text = state.Data.Description.GetLocalizedString();
+#endif
     }
 
     private void OnDisable()
@@ -47,6 +64,7 @@ public class UIHiddenItem : MonoBehaviour, IPointerDownHandler
         HiddenObjectManager.OnAnyItemFound -= OnAnyItemFound;
         HiddenObjectManager.OnAnyGroupCompleted -= OnAnyGroupCompleted;
         HiddenObjectManager.OnAnyItemPlaced -= OnAnyItemPlaced;
+        LocalizationSettings.SelectedLocaleChanged -= LocalizationSettings_SelectedLocaleChanged;
     }
 
     private void OnAnyItemFound(string groupId, int foundCount)

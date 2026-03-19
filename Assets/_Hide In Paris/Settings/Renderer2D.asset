@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BlackReplacementFeature
   m_EditorClassIdentifier: Assembly-CSharp::BlackReplacementFeature
   m_Active: 1
+  _shader: {fileID: 4800000, guid: 37074014f06fb39428757947693f45bb, type: 3}
   settings:
     replacementColor: {r: 0.41037738, g: 0.5827287, b: 1, a: 1}
     brightnessThreshold: 0.722

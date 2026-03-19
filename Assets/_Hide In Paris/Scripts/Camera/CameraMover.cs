@@ -3,6 +3,7 @@ using DG.Tweening;
 using inkolorgames;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityTimer;
 
 public class CameraMover : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class CameraMover : MonoBehaviour
     private Vector3 originPosition;
     private bool isRecentering;
 
+    private Timer unlockTimer;
+
     public bool IsDraggindEnable { get; set; }
     public bool IsZoomingEnable { get; set; }
     public bool IsMovingWithWASD { get; set; }
@@ -59,8 +62,11 @@ public class CameraMover : MonoBehaviour
         //HiddenObjectManager.OnStartHighlightingItem += LockMovement;
         //HiddenObjectManager.OnEndHighlightingItem += UnlockMovement;
         FlyToUIAnimation.OnStartFly += LockMovement;
+        FlyToUIAnimation.OnStartFly += PutTimerLock;
         FlyToUIAnimation.OnEndFly += UnlockMovement;
     }
+
+    private void PutTimerLock() => unlockTimer = Timer.Register(3f, onComplete: UnlockMovement);
 
     protected virtual void OnDisable()
     {
@@ -68,6 +74,7 @@ public class CameraMover : MonoBehaviour
         //HiddenObjectManager.OnStartHighlightingItem -= LockMovement;
         //HiddenObjectManager.OnEndHighlightingItem -= UnlockMovement;
         FlyToUIAnimation.OnStartFly -= LockMovement;
+        FlyToUIAnimation.OnStartFly -= PutTimerLock;
         FlyToUIAnimation.OnEndFly -= UnlockMovement;
     }
 

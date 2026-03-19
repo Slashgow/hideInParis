@@ -5,5 +5,7 @@ public enum SurfaceType
     WOOD,
     GRAVEL,
     METAL,
-    WATER
+    WATER,
+    CAT,
+    BIRD
 }

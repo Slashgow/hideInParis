@@ -40,7 +40,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 72787018772480
-    m_Localized: Natalie went to see the latest El Bandito before going to the terrace.
+    m_Localized: Natalie went to see the latest El Bandito before going to take a
+      coffee outside.
     m_Metadata:
       m_Items: []
   - m_Id: 75465325146112
@@ -75,6 +76,31 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 323295415496704
     m_Localized: Sound effects Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 725305868546048
+    m_Localized: Languages
+    m_Metadata:
+      m_Items: []
+  - m_Id: 737482113413120
+    m_Localized: '<b>Congratulations, you found everything! </b>
+
+      
+
+      Feel
+      free to leave your feedback in the comments. I''m thinking of making more levels
+      featuring iconic Parisian locations. Your input is important to me so I know
+      what to improve/change, or even if it''s worth continuing.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 737630856015872
+    m_Localized: Feel free to leave your feedback in the comments. I'm thinking of
+      making more levels featuring iconic Parisian locations. Your input is important
+      to me so I know what to improve/change, or even if it's worth continuing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 738236953915392
+    m_Localized: Close
     m_Metadata:
       m_Items: []
   references:

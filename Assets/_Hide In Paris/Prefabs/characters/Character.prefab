@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7741653877219071476}
   - component: {fileID: 3725612802220316450}
+  - component: {fileID: 5888652573160293300}
+  - component: {fileID: 3486797943320241503}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -55,6 +57,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5888652573160293300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578620743877589216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2330575b6996f044785a0957fca98623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterAnimation
+  animator: {fileID: 3725612802220316450}
+  useRandomAnimation: 1
+  startingAnimation: 0
+--- !u!114 &3486797943320241503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578620743877589216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef0c5de8841bec488065458294df954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomIdleDelay
+  minDelay: 0
+  maxDelay: 2
 --- !u!1 &1800841088845061482
 GameObject:
   m_ObjectHideFlags: 0

@@ -514,6 +514,248 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: sun_1
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 1988
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc54eb60d29ddec4aaa7d113138dcb91
+      internalID: -318195209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sun_2
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 1991
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859dea77a76cc3b4c83d9362d8db01e9
+      internalID: 1504888851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 1885
+        width: 147
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 456d3ef8de2f8b74ea73c80631dc98ce
+      internalID: 809300460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry_1
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 1895
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 650d8e7dcb7df224db605f97e029b94d
+      internalID: -2114467691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry_2
+      rect:
+        serializedVersion: 2
+        x: 1726
+        y: 1896
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e4af94764af9046ac3ae4d2532b3c9
+      internalID: -55700231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sad
+      rect:
+        serializedVersion: 2
+        x: 1789
+        y: 1891
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 269d41c957f73e64d9d1ef1ae1a33d74
+      internalID: 1400442072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouse_1
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 1786
+        width: 101
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52c97fa5e43508040821c5ccf8140ab5
+      internalID: 1753127944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: happy
+      rect:
+        serializedVersion: 2
+        x: 1804
+        y: 1823
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eba583250db3ea45a711307d8be8f81
+      internalID: 656954794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sunglasse_wear
+      rect:
+        serializedVersion: 2
+        x: 1934
+        y: 1817
+        width: 83
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63f90a67a10fa584ea2434ecf8ec5e2b
+      internalID: -520452291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouse_2
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 1672
+        width: 56
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4254896a0e7acd47afb85b105321a7d
+      internalID: 23284720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pieces_bread
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 1734
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e517f36daebf9244a6fb56501debb4d
+      internalID: 2130496328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -526,22 +768,33 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":2,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
+      Main_5_1: 1196030128
+      Main_5_10: -1449375061
+      Main_5_12: -419093651
       Main_5_13: -7941973876661906910
       Main_5_14: -6320300039090882914
       Main_5_15: -424211635645290795
-      Main_5_16: -7439390193349806084
-      Main_5_18: 8215580627539183894
+      Main_5_2: 392642551
       Main_5_20: -581637055848781698
       Main_5_21: -4275842125238053483
-      Main_5_6: 3473347266520023573
+      Main_5_23: -2056009244
+      Main_5_4: -516127260
+      Main_5_5: -1842850895
       Main_5_8: 4549901840820222404
-      Main_5_9: 6191033703712774840
+      angry_1: -2114467691
+      angry_2: 6191033703712774840
       back_arrow: 463992551168879423
       bush_hole_1: -2592019567304037286
       bush_hole_2: 7404356404711751701
       bush_hole_3: -2654167624505503640
+      girl: 3473347266520023573
+      happy: 656954794
+      mouse_1: -7439390193349806084
+      mouse_2: 23284720
       particle_1: 8184967623560046432
       particle_10: -872038199446583426
       particle_11: 3402117832316813387
@@ -553,6 +806,11 @@ TextureImporter:
       particle_7: -4898635973284636970
       particle_8: 3434743667578030418
       particle_9: 2159008360810265664
+      pieces_bread: 2130496328
+      sad: 1400442072
+      sun_1: -318195209
+      sun_2: 1504888851
+      sunglasse_wear: 8215580627539183894
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

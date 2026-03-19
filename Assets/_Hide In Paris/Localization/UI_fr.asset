@@ -42,7 +42,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 72787018772480
     m_Localized: "Natalie est all\xE9 voir le dernier El bandito avant d'aller en
-      terasse"
+      terasse prendre un caf\xE9."
     m_Metadata:
       m_Items: []
   - m_Id: 75465325146112
@@ -78,6 +78,29 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 323295415496704
     m_Localized: Volume des effets sonores
+    m_Metadata:
+      m_Items: []
+  - m_Id: 725305868546048
+    m_Localized: Langue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 737482113413120
+    m_Localized: "<b>F\xE9licitations vous avez tout trouv\xE9!</b>\n\nN'h\xE9sitez
+      pas \xE0 laisser votre avis en commentaire. Je songe \xE0 faire d'autres niveaux
+      avec des lieux embl\xE9matiques de Paris. C'est important  pour moi d'avoir
+      vos retours pour savoir ce qu'il faut am\xE9liorer/changer ou si \xE7a vaut
+      m\xEAme la peine de continuer."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 737630856015872
+    m_Localized: "N'h\xE9sitez pas \xE0 laisser votre avis en commentaire. Je songe
+      \xE0 faire d'autres niveaux avec des lieux embl\xE9matiques de Paris. C'est
+      important  pour moi d'avoir vos retours pour savoir ce qu'il faut am\xE9liorer/changer
+      ou si \xE7a vaut m\xEAme la peine de continuer."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 738236953915392
+    m_Localized: Fermer
     m_Metadata:
       m_Items: []
   references:

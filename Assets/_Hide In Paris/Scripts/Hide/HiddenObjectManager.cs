@@ -36,6 +36,7 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
     [SerializeField] private UnityEvent<Vector3> OnAnyItemFoundWithPosition;
     [SerializeField] private UnityEvent<Vector3> OnAnyItemPlacedWithPosition;
 
+    private Coroutine coroutine;
 
     protected override void Awake()
     {
@@ -114,12 +115,20 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
 
     private void Highlight(HiddenObjectItem item)
     {
+        if(coroutine != null)
+        {
+            StopCoroutine(coroutine);
+            coroutine = null;
+            highlightBackground.gameObject.SetActive(false);
+            OnEndHighlightingItem?.Invoke();
+        }
+
         OnStartHighlightingItem?.Invoke();
         highlightBackground.transform.position = item.transform.position;
         highlightBackground.gameObject.SetActive(true);
         item.Highlight();
 
-        StartCoroutine(StopHighlight(item));
+        coroutine = StartCoroutine(StopHighlight(item));
     }
 
     private IEnumerator StopHighlight(HiddenObjectItem item)

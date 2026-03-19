@@ -71,6 +71,22 @@ MonoBehaviour:
     m_Key: VOLUME_SFX
     m_Metadata:
       m_Items: []
+  - m_Id: 725305868546048
+    m_Key: LANGUAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 737482113413120
+    m_Key: END
+    m_Metadata:
+      m_Items: []
+  - m_Id: 737630856015872
+    m_Key: START
+    m_Metadata:
+      m_Items: []
+  - m_Id: 738236953915392
+    m_Key: CLOSE
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

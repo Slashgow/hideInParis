@@ -1,7 +1,8 @@
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CloudIsometricFloat : MonoBehaviour, IPointerClickHandler
+public class IsometricAutoMover : MonoBehaviour, IPointerClickHandler
 {
     public enum IsometricDirection { RightDown, LeftDown }
     public IsometricDirection axisDirection = IsometricDirection.RightDown;
@@ -15,18 +16,28 @@ public class CloudIsometricFloat : MonoBehaviour, IPointerClickHandler
     public float boostSpeed = 8f;
     public float boostDamping = 5f;
 
+    [SerializeField] private bool reverseOnChangeDirection;
+    [SerializeField, ShowIf("reverseOnChangeDirection")] private Transform visual;
+
     private Vector3 axis;
     private Vector3 origin;
     private float phase;
 
     private bool isBoosting;
     private Vector3 boostTarget;
+    private bool isReverse;
 
     void Start()
     {
         origin = transform.position;
         phase = Random.Range(0f, Mathf.PI * 2f);
         UpdateAxis();
+
+        if(reverseOnChangeDirection && axisDirection == IsometricDirection.LeftDown)
+        {
+            Debug.Log("reverse");
+            visual.localScale = new Vector3(visual.localScale.x * -1f, visual.localScale.y, visual.localScale.z);
+        }
     }
 
     void UpdateAxis()
@@ -59,9 +70,22 @@ public class CloudIsometricFloat : MonoBehaviour, IPointerClickHandler
         {
             phase += speed * Time.deltaTime;
             transform.position = origin + axis * (Mathf.Sin(phase) * travelDistance);
+
+            if(reverseOnChangeDirection && !isReverse && Mathf.Sin(phase) >= 1f)
+            {
+                isReverse = true;
+                Debug.Log("reverse");
+                visual.localScale = new Vector3(visual.localScale.x * -1f, visual.localScale.y, visual.localScale.z);
+            }
+            else if(reverseOnChangeDirection && isReverse && Mathf.Sin(phase) <= -1f)
+            {
+                isReverse = false;
+                Debug.Log("reverse false");
+                visual.localScale = new Vector3(visual.localScale.x * -1f, visual.localScale.y, visual.localScale.z);
+            }
         }
     }
-
+    public void OnPointerClick(PointerEventData eventData) => Boost();
     public void Boost()
     {
         UpdateAxis();
@@ -122,6 +146,6 @@ public class CloudIsometricFloat : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void OnPointerClick(PointerEventData eventData) => Boost();
+
 #endif
 }

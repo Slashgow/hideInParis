@@ -27,6 +27,7 @@ public class BlackReplacementFeature : ScriptableRendererFeature
         [Header("Rendering")]
         public RenderPassEvent renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
     }
+    [SerializeField] private Shader _shader;
 
     public Settings settings = new Settings();
 
@@ -35,13 +36,12 @@ public class BlackReplacementFeature : ScriptableRendererFeature
 
     public override void Create()
     {
-        var shader = Shader.Find("Custom/BlackReplacement");
-        if (shader == null)
+        if (_shader == null)
         {
-            Debug.LogError("[BlackReplacementFeature] Shader 'Custom/BlackReplacement' not found.");
+            Debug.LogError("[BlackReplacementFeature] Shader not assigned.");
             return;
         }
-        _material = new Material(shader);
+        _material = CoreUtils.CreateEngineMaterial(_shader); // use CoreUtils instead of new Material()
         _pass = new BlackReplacementPass(_material, settings);
         _pass.renderPassEvent = settings.renderPassEvent;
     }

@@ -481,7 +481,7 @@ MonoBehaviour:
   radialFillBar: {fileID: 1025308483760809116}
   descriptionText: {fileID: 3507865487444456453}
   textParent: {fileID: 4550129053186771789}
-  colorDefault: {r: 0, g: 0, b: 0, a: 0.29803923}
+  colorDefault: {r: 0, g: 0, b: 0, a: 0.21960784}
   colorCompleted: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &2045623524357467529
 MonoBehaviour:

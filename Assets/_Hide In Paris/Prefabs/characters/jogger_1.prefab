@@ -24,6 +24,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.024
       objectReference: {fileID: 0}
+    - target: {fileID: 5888652573160293300, guid: 9bd9a995940d92d48ac30da57cd60e3e, type: 3}
+      propertyPath: startingAnimation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888652573160293300, guid: 9bd9a995940d92d48ac30da57cd60e3e, type: 3}
+      propertyPath: useRandomAnimation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7168869322365014026, guid: 9bd9a995940d92d48ac30da57cd60e3e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -75,5 +83,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 578620743877589216, guid: 9bd9a995940d92d48ac30da57cd60e3e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4812343368605787472}
   m_SourcePrefab: {fileID: 100100000, guid: 9bd9a995940d92d48ac30da57cd60e3e, type: 3}
+--- !u!1 &4006775840480720189 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 578620743877589216, guid: 9bd9a995940d92d48ac30da57cd60e3e, type: 3}
+  m_PrefabInstance: {fileID: 4583892451026439645}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4812343368605787472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4006775840480720189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e480cdf13f4a3d243ae23754e6edbcd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IsometricAutoMover
+  axisDirection: 0
+  angle: 30
+  travelDistance: 15
+  speed: 0.15
+  boostSpeed: 8
+  boostDamping: 5
+  reverseOnChangeDirection: 1
+  visual: {fileID: 9108030554368662734}
+--- !u!4 &9108030554368662734 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4754526244195455251, guid: 9bd9a995940d92d48ac30da57cd60e3e, type: 3}
+  m_PrefabInstance: {fileID: 4583892451026439645}
+  m_PrefabAsset: {fileID: 0}
