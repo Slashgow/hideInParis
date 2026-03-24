@@ -85,10 +85,10 @@ MonoBehaviour:
   - m_Id: 737482113413120
     m_Localized: '<b>Congratulations, you found everything! </b>
 
-      
 
-      Feel
-      free to leave your feedback in the comments. I''m thinking of making more levels
+
+      Feel free
+      to leave your feedback in the comments. I''m thinking of making more levels
       featuring iconic Parisian locations. Your input is important to me so I know
       what to improve/change, or even if it''s worth continuing.'
     m_Metadata:
@@ -101,6 +101,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 738236953915392
     m_Localized: Close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2478867581628416
+    m_Localized: Color Theme
     m_Metadata:
       m_Items: []
   references:

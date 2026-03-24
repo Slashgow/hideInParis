@@ -87,6 +87,10 @@ MonoBehaviour:
     m_Key: CLOSE
     m_Metadata:
       m_Items: []
+  - m_Id: 2478867581628416
+    m_Key: COLOR_THEME
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
