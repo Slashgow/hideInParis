@@ -10,7 +10,7 @@ public class HiddenObjectItem : MonoBehaviour, IPointerDownHandler
     [SerializeField] private bool highlightOnFound = true;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private bool changeColorOnFound = false;
-
+    public SpriteRenderer SpriteRenderer => spriteRenderer;
     public bool HightlightOnFound => highlightOnFound;
 
     [Header("Placement")]

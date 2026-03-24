@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using inkolorgames;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,6 +15,7 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
     [Header("Groups")]
     [SerializeField] private List<HiddenObjectGroup> groups = new List<HiddenObjectGroup>();
     public List<HiddenObjectGroup> HiddenObjects => groups;
+    private List<HiddenObjectItem> items = new List<HiddenObjectItem>();
 
     [Header("Global Events")]
     [SerializeField] private UnityEvent onAllGroupsCompletedUnity;
@@ -51,9 +53,11 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
         _completedGroupCount = 0;
 
         var allItems = FindObjectsByType<HiddenObjectItem>(FindObjectsSortMode.None);
+        items = allItems.ToList();
         foreach (var item in allItems)
         {
-            if (string.IsNullOrEmpty(item.groupId)) continue;
+            if (string.IsNullOrEmpty(item.groupId)) 
+                continue;
 
             if (!_itemCountsPerGroup.ContainsKey(item.groupId))
                 _itemCountsPerGroup[item.groupId] = 0;
@@ -63,7 +67,8 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
 
         foreach (var group in groups)
         {
-            if (group == null) continue;
+            if (group == null) 
+                continue;
 
             if (_states.ContainsKey(group.GroupId))
             {
@@ -174,6 +179,10 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
         if (_completedGroupCount >= _states.Count)
             onAllGroupsCompletedUnity?.Invoke();
     }
+
+    public HiddenObjectItem GetNextUnfoundHiddenObject() => items.FirstOrDefault(item => item.IsFound == false);
+    public HiddenObjectDropZone GetNextDropZoneItemNotPlaced() => items.FirstOrDefault(item => item.requiresPlacement && item.IsFound && !item.IsPlaced).targetDropZone;
+
 
     [ContextMenu("Log Status")]
     private void LogStatus()
