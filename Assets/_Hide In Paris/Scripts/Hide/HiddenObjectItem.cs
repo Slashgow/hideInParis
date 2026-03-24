@@ -9,6 +9,7 @@ public class HiddenObjectItem : MonoBehaviour, IPointerDownHandler
     [Header("Visuals")]
     [SerializeField] private bool highlightOnFound = true;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private bool changeColorOnFound = false;
 
     public bool HightlightOnFound => highlightOnFound;
 
@@ -73,6 +74,9 @@ public class HiddenObjectItem : MonoBehaviour, IPointerDownHandler
 
         _found = true;
         HiddenObjectManager.Instance?.ReportItemFound(this);
+
+        if(changeColorOnFound && spriteRenderer != null)
+            spriteRenderer.color = Color.black;
     }
 
     public void FlyToUI(Vector3 worldTarget)

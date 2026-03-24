@@ -2238,6 +2238,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lampadaire (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7443230876252209513, guid: 46c18b5e52eba934289fbfc8d2ed0d58, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8382586491320334220, guid: 46c18b5e52eba934289fbfc8d2ed0d58, type: 3}
       propertyPath: m_SortingOrder
       value: 4
@@ -2509,6 +2513,7 @@ MonoBehaviour:
   groupId: Egout
   highlightOnFound: 1
   spriteRenderer: {fileID: 135689247}
+  changeColorOnFound: 0
   requiresPlacement: 1
   targetDropZone: {fileID: 1882525393}
   sprite: {fileID: 5819523775116762984, guid: 3352a11a1d3d3a14da1b1b3d3b48a860, type: 3}
@@ -7997,6 +8002,7 @@ MonoBehaviour:
   groupId: Lover_2
   highlightOnFound: 1
   spriteRenderer: {fileID: 1146453953}
+  changeColorOnFound: 0
   requiresPlacement: 0
   targetDropZone: {fileID: 0}
   sprite: {fileID: 0}
@@ -11176,6 +11182,7 @@ MonoBehaviour:
   groupId: Baguette
   highlightOnFound: 1
   spriteRenderer: {fileID: 682871935}
+  changeColorOnFound: 0
   requiresPlacement: 1
   targetDropZone: {fileID: 1160495476}
   sprite: {fileID: -4947605339959000970, guid: 3352a11a1d3d3a14da1b1b3d3b48a860, type: 3}
@@ -11972,6 +11979,7 @@ MonoBehaviour:
   groupId: Sunglass
   highlightOnFound: 1
   spriteRenderer: {fileID: 725979665}
+  changeColorOnFound: 0
   requiresPlacement: 1
   targetDropZone: {fileID: 953545573}
   sprite: {fileID: -6886593306868627743, guid: 3352a11a1d3d3a14da1b1b3d3b48a860, type: 3}
@@ -17083,6 +17091,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 8161566743145868831, guid: f4bfd67528fd08e44850088b1fe4853b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17418,6 +17430,7 @@ MonoBehaviour:
   groupId: Water
   highlightOnFound: 1
   spriteRenderer: {fileID: 983019128}
+  changeColorOnFound: 0
   requiresPlacement: 1
   targetDropZone: {fileID: 726499038}
   sprite: {fileID: -6094619736681214895, guid: 3352a11a1d3d3a14da1b1b3d3b48a860, type: 3}
@@ -20547,6 +20560,7 @@ MonoBehaviour:
   groupId: Lover_1
   highlightOnFound: 1
   spriteRenderer: {fileID: 345713541}
+  changeColorOnFound: 0
   requiresPlacement: 0
   targetDropZone: {fileID: 0}
   sprite: {fileID: 0}
@@ -24647,6 +24661,7 @@ MonoBehaviour:
   groupId: Perruque
   highlightOnFound: 1
   spriteRenderer: {fileID: 1458495959}
+  changeColorOnFound: 0
   requiresPlacement: 1
   targetDropZone: {fileID: 1529654163}
   sprite: {fileID: 0}
@@ -29454,6 +29469,7 @@ MonoBehaviour:
   groupId: Phone
   highlightOnFound: 1
   spriteRenderer: {fileID: 1779829015}
+  changeColorOnFound: 0
   requiresPlacement: 1
   targetDropZone: {fileID: 229821391}
   sprite: {fileID: 7158772604198888796, guid: 3352a11a1d3d3a14da1b1b3d3b48a860, type: 3}

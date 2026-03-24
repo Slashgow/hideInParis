@@ -134,6 +134,7 @@ MonoBehaviour:
   groupId: Cat
   highlightOnFound: 1
   spriteRenderer: {fileID: 2468428416202370686}
+  changeColorOnFound: 1
   requiresPlacement: 0
   targetDropZone: {fileID: 0}
   sprite: {fileID: 0}
