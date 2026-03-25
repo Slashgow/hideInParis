@@ -91,6 +91,18 @@ MonoBehaviour:
     m_Key: COLOR_THEME
     m_Metadata:
       m_Items: []
+  - m_Id: 2945298395951104
+    m_Key: RESOLUTION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2945354641567744
+    m_Key: WINDOW_MODE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2945478390312960
+    m_Key: V_SYNC
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

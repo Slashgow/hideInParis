@@ -107,6 +107,18 @@ MonoBehaviour:
     m_Localized: Color Theme
     m_Metadata:
       m_Items: []
+  - m_Id: 2945298395951104
+    m_Localized: Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2945354641567744
+    m_Localized: Window Mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2945478390312960
+    m_Localized: Vertical syncing
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

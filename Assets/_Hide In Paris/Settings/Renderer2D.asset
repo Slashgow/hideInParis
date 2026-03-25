@@ -15,11 +15,11 @@ MonoBehaviour:
   m_Active: 1
   _shader: {fileID: 4800000, guid: 37074014f06fb39428757947693f45bb, type: 3}
   settings:
-    replacementColor: {r: 0.41037738, g: 0.5827287, b: 1, a: 1}
+    replacementColor: {r: 0.8773585, g: 0.5421413, b: 0.7024626, a: 1}
     brightnessThreshold: 0.722
     edgeSoftness: 0.193
     maxSaturation: 1
-    renderPassEvent: 500
+    renderPassEvent: 600
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

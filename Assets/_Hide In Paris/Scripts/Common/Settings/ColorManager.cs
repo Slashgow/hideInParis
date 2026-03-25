@@ -5,13 +5,17 @@ using inkolorgames;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using static ColorManager;
 
 public class ColorManager : MonoSingleton<ColorManager>
 {
     public enum ColorTheme
     {
         BEIGE_AND_BLUE,
-        BLACK_AND_WHITE
+        BLACK_AND_WHITE,
+        CYAN_AND_ROSE,
+        BEIGE_AND_ROSE,
+        MAUVE_AND_BLUE
     }
 
     [Serializable]
@@ -30,7 +34,7 @@ public class ColorManager : MonoSingleton<ColorManager>
 
 
     [SerializeField] private List<ColorThemeData> themeDatas;
-    [SerializeField] private ScriptableRendererFeature colorReplacementFeature;
+    [SerializeField] private BlackReplacementFeature colorReplacementFeature;
     
     private Volume volume;
     private ColorAdjustments colorAdjustments;
@@ -55,7 +59,11 @@ public class ColorManager : MonoSingleton<ColorManager>
             this.colorAdjustments = colorAdjustments;
 
         if (PlayerPrefs.HasKey(COLOR_THEME_ID))
-            SetTheme( GetThemeDataByIndex(PlayerPrefs.GetInt(COLOR_THEME_ID)).Theme);
+        {
+            int index = PlayerPrefs.GetInt(COLOR_THEME_ID);
+            ColorThemeData colorThemeData = GetThemeDataByIndex(index);
+            SetTheme(colorThemeData.Theme);
+        }
         else
             SetTheme(ColorTheme.BEIGE_AND_BLUE);
     }
@@ -66,24 +74,25 @@ public class ColorManager : MonoSingleton<ColorManager>
     public void SetTheme(ColorTheme theme)
     {
         CurrentColorTheme = theme;
-        PlayerPrefs.SetFloat(COLOR_THEME_ID, GetIndexByTheme(theme));
+        PlayerPrefs.SetInt(COLOR_THEME_ID, GetIndexByTheme(theme));
 
-        switch (theme)
+        if(theme != ColorTheme.BLACK_AND_WHITE)
+            ApplyColorThemeWithReplacement(theme);
+        else
         {
-            case ColorTheme.BEIGE_AND_BLUE:
-                ColorThemeData themeData = GetThemeDataByTheme(theme);
-                colorAdjustments.active = true;
-                colorAdjustments.colorFilter.value = themeData.BackgroundColor;
-                colorReplacementFeature.SetActive(true);
-                break;
-            case ColorTheme.BLACK_AND_WHITE:
-                ColorThemeData blackThemeData = GetThemeDataByTheme(theme);
-                colorAdjustments.active = false;
-                colorReplacementFeature.SetActive(false);
-                break;
-            default:
-                break;
+            ColorThemeData blackThemeData = GetThemeDataByTheme(theme);
+            colorAdjustments.active = false;
+            colorReplacementFeature.SetActive(false);
         }
+    }
+
+    private void ApplyColorThemeWithReplacement(ColorTheme theme)
+    {
+        ColorThemeData themeData = GetThemeDataByTheme(theme);
+        colorAdjustments.active = true;
+        colorAdjustments.colorFilter.value = themeData.BackgroundColor;
+        colorReplacementFeature.SetActive(true);
+        colorReplacementFeature.settings.replacementColor = themeData.OutlineColor;
     }
 
     public void SetTheme(int index)

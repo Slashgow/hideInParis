@@ -1567,6 +1567,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: exit
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 887
+        width: 171
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9769164506db2a54ea7165fc6dcfcf85
+      internalID: -1905717707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1671,6 +1693,7 @@ TextureImporter:
       dirt_6: -2093025896968724560
       dirt_7: -4014821736977150173
       dirt_8: 7757273440582182579
+      exit: -1905717707
       ground_1: -4270708874641117951
       ground_2: -2053537553312290741
       ground_3: -5915969882429505942
