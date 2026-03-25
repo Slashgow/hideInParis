@@ -27,24 +27,23 @@ public class ClickableFlyer : MonoBehaviour, IPointerDownHandler
     [Tooltip("If true, flips the sprite on X so the pigeon faces the direction it flies.")]
     public bool faceDirection = true;
 
-
-    private Animator    _animator;
-    private SpriteRenderer _spriteRenderer;
-    private bool        _flying = false;
-    private Vector2     _direction;
-    private float       _timer = 0f;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+    private bool flying = false;
+    private Vector2 direction;
+    private float timer = 0f;
 
     private void Awake()
     {
-        _animator       = GetComponent<Animator>();
-        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
-        if (_animator == null)
+        if (animator == null)
             Debug.LogWarning($"[ClickableFlyer] '{name}' has no Animator.", this);
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (_flying) 
+        if (flying) 
             return;
 
         TriggerFly();
@@ -52,33 +51,28 @@ public class ClickableFlyer : MonoBehaviour, IPointerDownHandler
 
     private void Update()
     {
-        if (!_flying) return;
+        if (!flying) 
+            return;
 
-        // Move in the chosen direction
-        transform.Translate(_direction * flySpeed * Time.deltaTime, Space.World);
+        transform.Translate(direction * flySpeed * Time.deltaTime, Space.World);
 
-        // Count down and deactivate
-        _timer -= Time.deltaTime;
-        if (_timer <= 0f)
+        timer -= Time.deltaTime;
+        if (timer <= 0f)
             gameObject.SetActive(false);
     }
 
-    // ── Core ───────────────────────────────────────────────────────────────────
-
     public void TriggerFly()
     {
-        _flying    = true;
-        _timer     = lifetime;
-        _spriteRenderer.sortingOrder = 200;
-        _direction = PickDirection();
+        flying    = true;
+        timer     = lifetime;
+        spriteRenderer.sortingOrder = 200;
+        direction = PickDirection();
 
-        // Trigger the animation
-        if (_animator != null)
-            _animator.SetTrigger(flyTriggerName);
+        if (animator != null)
+            animator.SetTrigger(flyTriggerName);
 
-        // Flip sprite to face travel direction
-        if (faceDirection && _spriteRenderer != null)
-            _spriteRenderer.flipX = _direction.x < 0f;
+        if (faceDirection && spriteRenderer != null)
+            spriteRenderer.flipX = direction.x < 0f;
     }
 
     private Vector2 PickDirection()
@@ -90,7 +84,7 @@ public class ClickableFlyer : MonoBehaviour, IPointerDownHandler
 
     public void Fly() 
     {
-        if (_flying) 
+        if (flying) 
             return;
 
         TriggerFly();
@@ -98,14 +92,14 @@ public class ClickableFlyer : MonoBehaviour, IPointerDownHandler
 
     public void ResetFlyer()
     {
-        _flying = false;
-        _timer  = 0f;
+        flying = false;
+        timer  = 0f;
 
-        if (_spriteRenderer != null)
-            _spriteRenderer.flipX = false;
+        if (spriteRenderer != null)
+            spriteRenderer.flipX = false;
 
-        if (_animator != null)
-            _animator.ResetTrigger(flyTriggerName);
+        if (animator != null)
+            animator.ResetTrigger(flyTriggerName);
     }
 
 
