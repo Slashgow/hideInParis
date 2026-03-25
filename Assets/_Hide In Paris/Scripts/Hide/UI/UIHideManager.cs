@@ -18,7 +18,8 @@ public class UIHideManager : MonoBehaviour
         foreach (var hiddenObjectState in hiddenObjectsGroups)
         {
             UIHiddenItem uIHiddenItem = Instantiate(hiddenItemPrefab, prefabParent);
-            uIHiddenItem.Initialize(hiddenObjectState.Value);
+            HiddenObjectManager.Instance.RegisterUI(hiddenObjectState.Value.Data.GroupId, uIHiddenItem);
+            //uIHiddenItem.Initialize(hiddenObjectState.Value);
         }
     }
 

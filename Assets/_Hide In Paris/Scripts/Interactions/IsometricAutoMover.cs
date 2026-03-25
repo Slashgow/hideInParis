@@ -74,13 +74,13 @@ public class IsometricAutoMover : MonoBehaviour, IPointerClickHandler
             if(reverseOnChangeDirection && !isReverse && Mathf.Sin(phase) >= 1f)
             {
                 isReverse = true;
-                Debug.Log("reverse");
+                //Debug.Log("reverse");
                 visual.localScale = new Vector3(visual.localScale.x * -1f, visual.localScale.y, visual.localScale.z);
             }
             else if(reverseOnChangeDirection && isReverse && Mathf.Sin(phase) <= -1f)
             {
                 isReverse = false;
-                Debug.Log("reverse false");
+                //Debug.Log("reverse false");
                 visual.localScale = new Vector3(visual.localScale.x * -1f, visual.localScale.y, visual.localScale.z);
             }
         }

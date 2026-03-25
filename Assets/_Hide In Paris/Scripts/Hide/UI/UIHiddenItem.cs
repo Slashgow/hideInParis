@@ -30,14 +30,18 @@ public class UIHiddenItem : MonoBehaviour, IPointerDownHandler
         _groupID = state.Data.GroupId;
 
         iconHiddenItem.sprite = state.Data.Outline == null ? state.Data.Sprite : state.Data.Outline;
-        radialFillBar.fillAmount = 0f;
-        radialFillBar.color = colorDefault;
+
+        if (state.FoundCount > 0)
+            iconHiddenItem.sprite = state.Data.Sprite;
+
+        radialFillBar.fillAmount =state.FoundCount / (float)_requiredCount;
+        radialFillBar.color = state.IsCompleted ? colorCompleted : colorDefault;
 
         SetDescription(state); 
         textParent.SetActive(false);
 
         // Register with manager so it can call GetWorldPosition / RegisterPlacementItem
-        HiddenObjectManager.Instance?.RegisterUI(_groupID, this);
+        //HiddenObjectManager.Instance?.RegisterUI(_groupID, this);
 
         HiddenObjectManager.OnAnyItemFound += OnAnyItemFound;
         HiddenObjectManager.OnAnyGroupCompleted += OnAnyGroupCompleted;

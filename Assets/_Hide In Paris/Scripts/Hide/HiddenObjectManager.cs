@@ -8,6 +8,10 @@ using UnityEngine.Events;
 
 public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
 {
+    [Header("Level")]
+    [Tooltip("Unique identifier for this level. Defaults to the scene name if left blank.")]
+    [SerializeField] private string levelId;
+
     [Header("Highlight")]
     [SerializeField] private Transform highlightBackground;
     [SerializeField, Range(0f, 5f)] private float highlightDuration = 2f;
@@ -39,11 +43,15 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
     [SerializeField] private UnityEvent<Vector3> OnAnyItemPlacedWithPosition;
 
     private Coroutine coroutine;
+    public string LevelId => string.IsNullOrWhiteSpace(levelId)
+    ? UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
+    : levelId;
 
     protected override void Awake()
     {
         highlightBackground.gameObject.SetActive(false);
         BuildStates();
+        LoadLevel();
     }
 
     private void BuildStates()
@@ -81,8 +89,84 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
         }
     }
 
-    public void RegisterUI(string groupId, UIHiddenItem ui) => _uiByGroup[groupId] = ui;
+    public void RegisterUI(string groupId, UIHiddenItem ui)
+    {
+        _uiByGroup[groupId] = ui;
+
+        if (_states.TryGetValue(groupId, out var state))
+            ui.Initialize(state);
+
+        foreach (var item in items)
+        {
+            if (item.groupId != groupId) 
+                continue;
+            if (item.requiresPlacement && item.IsFound && !item.IsPlaced)
+                ui.RegisterPlacementItem(item);
+        }
+    }
+
     public UIHiddenItem GetUI(string groupId) => _uiByGroup.TryGetValue(groupId, out var ui) ? ui : null;
+
+
+    /// <summary>
+    /// Snapshots the current found/placed state of every item and persists it.
+    /// Called automatically after each find/place.
+    /// </summary>
+    public void SaveLevel()
+    {
+        InsideLevelSaveData data = GameSaveSystem.Instance.LoadInsideLevelData(LevelId);
+
+        data.hiddenObjectStates = items.Select(item => item.GetSaveData()).ToList();
+
+        GameSaveSystem.Instance.SaveInsideLevelData(data);
+    }
+
+    /// <summary>
+    /// Restores item states silently (no animations, no manager events).
+    /// Call once after all UI has been registered, before gameplay starts.
+    /// </summary>
+    public void LoadLevel()
+    {
+        InsideLevelSaveData data = GameSaveSystem.Instance.LoadInsideLevelData(LevelId);
+
+        if (data.hiddenObjectStates == null || data.hiddenObjectStates.Count == 0)
+            return;
+
+        Dictionary<string, HiddenObjectItemSaveData> lookup = data.hiddenObjectStates.ToDictionary(s => s.sceneKey, s => s);
+
+        foreach (var item in items)
+        {
+            if (!lookup.TryGetValue(item.SceneKey, out var savedState))
+                continue;
+
+            item.RestoreFromSave(savedState);
+
+            if (!_states.TryGetValue(item.groupId, out var groupState))
+                continue;
+
+            if (savedState.found)
+            {
+                groupState.FoundCount++;
+
+                if (!item.requiresPlacement)
+                    SilentlyCompleteGroupIfDone(groupState);
+            }
+
+            if (savedState.placed)
+                SilentlyCompleteGroupIfDone(groupState);
+        }
+    }
+
+    private void SilentlyCompleteGroupIfDone(HiddenObjectGroupRuntimeState state)
+    {
+        if (state.IsCompleted) return;
+        if (state.FoundCount < state.RequiredCount) return;
+
+        state.IsCompleted = true;
+        _completedGroupCount++;
+    }
+
+
 
     public void ReportItemFound(HiddenObjectItem item)
     {
@@ -116,6 +200,8 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
         // Non-placement groups complete on collection
         if (!item.requiresPlacement)
             CheckGroupCompletion(item.groupId, state);
+
+        SaveLevel();
     }
 
     private void Highlight(HiddenObjectItem item)
@@ -156,6 +242,8 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
         OnAnyItemPlaced?.Invoke(item.groupId);
         OnAnyItemPlacedWithPosition?.Invoke(item.transform.position);
         CheckGroupCompletion(item.groupId, state);
+
+        SaveLevel();
     }
 
     public int GetFoundCount(string groupId) => _states.TryGetValue(groupId, out var state) ? state.FoundCount : 0;

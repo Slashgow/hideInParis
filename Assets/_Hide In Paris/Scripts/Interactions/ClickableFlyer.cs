@@ -65,7 +65,7 @@ public class ClickableFlyer : MonoBehaviour, IPointerDownHandler
 
     // ── Core ───────────────────────────────────────────────────────────────────
 
-    private void TriggerFly()
+    public void TriggerFly()
     {
         _flying    = true;
         _timer     = lifetime;

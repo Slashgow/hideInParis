@@ -22,6 +22,12 @@ public class HiddenObjectItem : MonoBehaviour, IPointerDownHandler
     public bool IsFound => _found;
     public bool IsPlaced => _placed;
 
+    /// <summary>
+    /// Stable identifier used for save/load: "{groupId}/{gameObject.name}".
+    /// Ensure no two items in the same group share the same GameObject name.
+    /// </summary>
+    public string SceneKey => $"{groupId}/{gameObject.name}";
+
     private bool _found = false;
     private bool _placed = false;
 
@@ -165,6 +171,39 @@ public class HiddenObjectItem : MonoBehaviour, IPointerDownHandler
         return hit != null && hit.gameObject == targetDropZone.gameObject;
     }
 
+    public HiddenObjectItemSaveData GetSaveData() => new HiddenObjectItemSaveData(SceneKey, _found, _placed);
+
+    public void RestoreFromSave(HiddenObjectItemSaveData data)
+    {
+        if (data == null) 
+            return;
+
+        _found = data.found;
+        _placed = data.placed;
+
+
+        if (_found)
+        {
+            if (changeColorOnFound && spriteRenderer != null)
+                spriteRenderer.color = Color.black;
+
+
+            if (TryGetComponent(out ClickableFlyer clickableFlyer))
+                gameObject.SetActive(false);
+            //if (_col != null) 
+            //    _col.enabled = false;
+
+            if(requiresPlacement)
+                gameObject.SetActive(false);
+        }
+
+        if (_placed)
+        {
+            targetDropZone?.PlaceItem(sprite);
+            gameObject.SetActive(false);
+        }
+    }
+
     public void ResetItem()
     {
         _found = false;
@@ -173,6 +212,9 @@ public class HiddenObjectItem : MonoBehaviour, IPointerDownHandler
         transform.position = _originalPosition;
         transform.localScale = Vector3.one;
         gameObject.SetActive(true);
+
+        if (spriteRenderer != null)
+            spriteRenderer.color = Color.white;
 
         _flyAnimation?.Cancel();
         if (_col != null) _col.enabled = true;

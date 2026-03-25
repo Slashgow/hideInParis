@@ -45,7 +45,7 @@ public class ClickManager : MonoBehaviour
 
         if (hit.TryGetComponent(out Surface surface))
         {
-            Debug.Log($"click on {surface.SurfaceType}");
+            //Debug.Log($"click on {surface.SurfaceType}");
             OnClickOnSurface?.Invoke(surface.SurfaceType);
         }
         else

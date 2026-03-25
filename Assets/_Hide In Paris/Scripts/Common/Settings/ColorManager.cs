@@ -40,6 +40,8 @@ public class ColorManager : MonoSingleton<ColorManager>
     public ColorTheme CurrentColorTheme { get; private set; }
     public int CurrentColorThemeIndex => themeDatas.IndexOf(GetThemeDataByTheme(CurrentColorTheme));
 
+    public const string COLOR_THEME_ID = "COLOR_THEME";
+
     protected override void Awake()
     {
         base.Awake();
@@ -52,14 +54,19 @@ public class ColorManager : MonoSingleton<ColorManager>
         if(volume.profile.TryGet(out ColorAdjustments colorAdjustments))
             this.colorAdjustments = colorAdjustments;
 
-        SetTheme(ColorTheme.BEIGE_AND_BLUE);
+        if (PlayerPrefs.HasKey(COLOR_THEME_ID))
+            SetTheme( GetThemeDataByIndex(PlayerPrefs.GetInt(COLOR_THEME_ID)).Theme);
+        else
+            SetTheme(ColorTheme.BEIGE_AND_BLUE);
     }
 
+    private int GetIndexByTheme(ColorTheme theme) => themeDatas.IndexOf(GetThemeDataByTheme(theme));
     private ColorThemeData GetThemeDataByIndex(int index) => themeDatas[index]; 
     private ColorThemeData GetThemeDataByTheme(ColorTheme theme) => themeDatas.FirstOrDefault(themeData => themeData.Theme == theme); 
     public void SetTheme(ColorTheme theme)
     {
         CurrentColorTheme = theme;
+        PlayerPrefs.SetFloat(COLOR_THEME_ID, GetIndexByTheme(theme));
 
         switch (theme)
         {

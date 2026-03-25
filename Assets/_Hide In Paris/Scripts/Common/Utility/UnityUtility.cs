@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace inkolorgames
 {
@@ -18,6 +19,23 @@ namespace inkolorgames
                 Object.Destroy(transform.GetChild(i).gameObject);
             }
         }
+
+        public static int GetBuildIndexByName(string sceneName)
+        {
+            int count = SceneManager.sceneCountInBuildSettings;
+
+            for (int i = 0; i < count; i++)
+            {
+                string path = SceneUtility.GetScenePathByBuildIndex(i);
+                string name = System.IO.Path.GetFileNameWithoutExtension(path);
+
+                if (name == sceneName)
+                    return i;
+            }
+
+            return -1; // Not found
+        }
+
 
     }
 }
