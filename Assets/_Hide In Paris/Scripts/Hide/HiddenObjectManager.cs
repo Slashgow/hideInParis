@@ -271,6 +271,16 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
     public HiddenObjectItem GetNextUnfoundHiddenObject() => items.FirstOrDefault(item => item.IsFound == false);
     public HiddenObjectDropZone GetNextDropZoneItemNotPlaced() => items.FirstOrDefault(item => item.requiresPlacement && item.IsFound && !item.IsPlaced).targetDropZone;
 
+    public HiddenObjectItem GetNextUnfoundHiddenObjectByGroupID(string groupID) => items.FirstOrDefault(item => item.groupId == groupID && !item.IsFound);
+
+    public HiddenObjectDropZone GetNextDropZoneNotPlacedByGroupID(string groupID) =>
+        items.FirstOrDefault(item =>
+                item.groupId == groupID &&
+                item.requiresPlacement &&
+                item.IsFound &&
+                !item.IsPlaced)
+            ?.targetDropZone;
+
 
     [ContextMenu("Log Status")]
     private void LogStatus()

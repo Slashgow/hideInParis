@@ -4,28 +4,15 @@ using UnityEngine.UI;
 
 public class UIHintButton : MonoBehaviour
 {
-    [SerializeField] private Button hintButton;
-    [SerializeField] private TextMeshProUGUI hintCountText;
-    private void OnEnable()
-    {
-        hintButton.onClick.AddListener(ShowHint);
-        HintManager.OnUseHint += HintManager_OnUseHint;
-    }
+    [SerializeField] private Button button;
+    [SerializeField] private TextMeshProUGUI hintCostText;
+    [SerializeField] private HintManager.HintCategory hintCategory;
 
-    private void OnDisable()
-    {
-        hintButton.onClick.RemoveListener(ShowHint);
-        HintManager.OnUseHint -= HintManager_OnUseHint;
-    }
-
-    private void Start() => UpdateTextCount(HintManager.Instance.RemainingHintCount);
-    private void ShowHint() => HintManager.Instance.ShowHint();
-    private void HintManager_OnUseHint(int remainingHint)
-    {
-        UpdateTextCount(remainingHint);
-
-        if(remainingHint <= 0)
-            hintButton.interactable = false;
-    }
-    private void UpdateTextCount(int remainingHint) => hintCountText.text = remainingHint.ToString();
+    private string groupID;
+    private void Start() => hintCostText.text = HintManager.Instance.GetCostByCategory(hintCategory).ToString();
+    public void Initialize(string groupID) => this.groupID = groupID;
+    private void OnEnable() => button.onClick.AddListener(ShowHint);
+    private void OnDisable() => button.onClick.RemoveListener(ShowHint);
+    private void ShowHint() => HintManager.Instance.ShowHint(groupID, hintCategory);
 }
+

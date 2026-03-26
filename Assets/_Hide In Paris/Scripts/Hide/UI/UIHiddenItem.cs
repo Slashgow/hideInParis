@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Localization.Settings;
+using System.Collections.Generic;
 
 public class UIHiddenItem : MonoBehaviour, IPointerDownHandler
 {
@@ -15,6 +16,10 @@ public class UIHiddenItem : MonoBehaviour, IPointerDownHandler
     [SerializeField] private Color colorDefault = Color.white;
     [SerializeField] private Color colorCompleted = Color.green;
 
+    [Header("Hints")]
+    [SerializeField] private GameObject hintParent;
+    [SerializeField] private List<UIHintButton> hintButtons;
+
     private HiddenObjectGroupRuntimeState _runtimeState;
 
     private int _requiredCount;
@@ -23,6 +28,26 @@ public class UIHiddenItem : MonoBehaviour, IPointerDownHandler
     private HiddenObjectItem _placementItem = null;
     private bool _placementLocked = false;
 
+    public string GroupID => _runtimeState.Data.GroupId;
+
+    private static GameObject currentHintParent;
+
+    public void ToggleHintButtons()
+    {
+        if (currentHintParent == hintParent)
+        {
+            hintParent.SetActive(false);
+            currentHintParent = null;
+            return;
+        }
+
+        if (currentHintParent != null)
+            currentHintParent.SetActive(false);
+
+        hintParent.SetActive(true);
+        currentHintParent = hintParent;
+    }
+    
     public void Initialize(HiddenObjectGroupRuntimeState state)
     {
         _runtimeState = state;
@@ -39,6 +64,9 @@ public class UIHiddenItem : MonoBehaviour, IPointerDownHandler
 
         SetDescription(state); 
         textParent.SetActive(false);
+
+        hintButtons.ForEach(hintButton => hintButton.Initialize(GroupID));
+        hintParent.SetActive(false);
 
         // Register with manager so it can call GetWorldPosition / RegisterPlacementItem
         //HiddenObjectManager.Instance?.RegisterUI(_groupID, this);
