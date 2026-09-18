@@ -119,10 +119,10 @@ public class Unlockable<T> : IUnlockable where T : ScriptableObject, IUnlockable
         if (IsUnlocked)
             return "Unlocked";
 
-        string description = "Unlock conditions:\n";
+        string description = string.Empty; // "Unlock conditions:\n";
         for (int i = 0; i < unlockConditions.Count; i++)
         {
-            description += $"- {unlockConditions[i].GetDescription()}";
+            description += $"{unlockConditions[i].GetDescription()}";
             if (i < unlockConditions.Count - 1)
                 description += "\n";
         }

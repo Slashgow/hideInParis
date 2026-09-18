@@ -10,32 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Localization-Locales
+  m_Name: Localization-String-Tables-German (de)
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: Localization-Locales
-  m_GUID: 9d603e028063d7147bd2cda24f6841d1
+  m_GroupName: Localization-String-Tables-German (de)
+  m_GUID: b7cacdd7e72278a4ebf7eff40bfa8c2a
   m_SerializeEntries:
-  - m_GUID: bdd93bcaa8e7fc54188498cb3aedcdb8
-    m_Address: French (fr)
+  - m_GUID: 25ec8698a265ca8449f1eae45dda2457
+    m_Address: UI_de
     m_ReadOnly: 1
     m_SerializedLabels:
-    - Locale
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c08cce1a1ad869346a0c208039796cd5
-    m_Address: German (de)
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d167cb24286ec1e4e941d9fd71bdb253
-    m_Address: English (en)
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale
+    - Locale-de
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 73138a986b123004d84705e98ccf8a00, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 883b8cda7b281964e8ba3d21dc706754, type: 2}
-    - {fileID: 11400000, guid: 319716cfa3b51a548bff9b8d29748656, type: 2}
+    - {fileID: 11400000, guid: 7677ddcab945b7e4bb9bd92ceac4f2e9, type: 2}
+    - {fileID: 11400000, guid: 26d41db5c0564934e856a8c84511e3f8, type: 2}

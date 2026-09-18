@@ -31,4 +31,8 @@ public class LevelManager : PersistentMonoSingleton<LevelManager>
 
         SceneLoader.Instance.LoadSceneAsyncName(levelData.Scene);
     }
+
+    public float GetProgressPercentageForLevel(string id) => GameSaveSystem.Instance.LoadInsideLevelData(id).completionPercentage;
+    public bool IsLevelUnlocked(string id) => unlockManager.IsItemUnlocked(id);
+    public string GetLevelUnlockDescription(string id) => unlockManager.GetUnlockDescription(id);
 }

@@ -10,7 +10,7 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
 {
     [Header("Level")]
     [Tooltip("Unique identifier for this level. Defaults to the scene name if left blank.")]
-    [SerializeField] private string levelId;
+    [SerializeField] private LevelData levelData;
 
     [Header("Highlight")]
     [SerializeField] private Transform highlightBackground;
@@ -43,9 +43,6 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
     [SerializeField] private UnityEvent<Vector3> OnAnyItemPlacedWithPosition;
 
     private Coroutine coroutine;
-    public string LevelId => string.IsNullOrWhiteSpace(levelId)
-    ? UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
-    : levelId;
 
     protected override void Awake()
     {
@@ -114,9 +111,10 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
     /// </summary>
     public void SaveLevel()
     {
-        InsideLevelSaveData data = GameSaveSystem.Instance.LoadInsideLevelData(LevelId);
+        InsideLevelSaveData data = GameSaveSystem.Instance.LoadInsideLevelData(levelData.ItemId);
 
         data.hiddenObjectStates = items.Select(item => item.GetSaveData()).ToList();
+        data.completionPercentage = OverallProgress();
 
         GameSaveSystem.Instance.SaveInsideLevelData(data);
     }
@@ -127,7 +125,7 @@ public class HiddenObjectManager : MonoSingleton<HiddenObjectManager>
     /// </summary>
     public void LoadLevel()
     {
-        InsideLevelSaveData data = GameSaveSystem.Instance.LoadInsideLevelData(LevelId);
+        InsideLevelSaveData data = GameSaveSystem.Instance.LoadInsideLevelData(levelData.ItemId);
 
         if (data.hiddenObjectStates == null || data.hiddenObjectStates.Count == 0)
             return;
